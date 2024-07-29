@@ -2,20 +2,19 @@ import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 import { Container } from "@mui/material";
 
 function isRouterError(object) {
-    return 'message' in object;
+  return "message" in object;
 }
 
 function errorMessage(error) {
-    if (isRouteErrorResponse(error)) {
-        return `${error.status} ${error.statusText}`
-    } else if (error != undefined && isRouterError(error)) {
-        return error.message;
-    } else if (typeof error === 'string') {
-        return error
-    } else {
-        console.error(error)
-        return 'Unknown error'
-    }
+  if (isRouteErrorResponse(error)) {
+    return `${error.status} ${error.statusText}`;
+  } else if (error != undefined && isRouterError(error)) {
+    return error.message;
+  } else if (typeof error === "string") {
+    return error;
+  } else {
+    return "Unknown error";
+  }
 }
 
 export default function ErrorPage() {

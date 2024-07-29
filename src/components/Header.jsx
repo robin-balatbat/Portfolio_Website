@@ -1,32 +1,30 @@
-import React from 'react'
+import React from "react";
 import {
   AppBar,
   Box,
   Button,
   Container,
   Toolbar,
-  Typography
-} from '@mui/material';
-import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
-import {
-  Link
-} from 'react-router-dom'
-import { navbarLinks } from '../utils/Constants';
+  Typography,
+} from "@mui/material";
+import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
+import { Link } from "react-router-dom";
+import { navbarLinks } from "../utils/Constants";
 
 const Header = () => {
   return (
-    <AppBar position='sticky' color='primary'>
+    <AppBar position="sticky" color="primary">
       <Container>
         <Toolbar disableGutters>
           <CatchingPokemonIcon
             sx={{
               mr: 1,
-              transform: 'rotate(180deg)'
+              transform: "rotate(180deg)",
             }}
           />
-          <Typography 
+          <Typography
             sx={{
-              textTransform: 'uppercase'
+              textTransform: "uppercase",
             }}
           >
             Logo
@@ -34,14 +32,11 @@ const Header = () => {
           <Box
             sx={{
               flexGrow: 1,
-              display: 'flex'
+              display: "flex",
             }}
           >
             {navbarLinks.map((item) => (
-              <Button
-                component={Link} 
-                to={item.link}
-              >
+              <Button component={Link} to={item.link} key={item.linkLabel}>
                 {item.linkLabel}
               </Button>
             ))}
@@ -49,7 +44,7 @@ const Header = () => {
         </Toolbar>
       </Container>
     </AppBar>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

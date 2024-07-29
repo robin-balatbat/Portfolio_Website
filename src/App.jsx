@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
     Outlet
 } from "react-router-dom"
@@ -25,7 +25,7 @@ const Layout = () => {
   )
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <Layout />,
     errorElement: <ErrorPage />,
@@ -41,10 +41,6 @@ const router = createBrowserRouter([
       {
         path: '/projects',
         element: <div>Mocked</div>
-      },
-      {
-        path: '/blog',
-        element: <div>Blog Blog Blog</div>
       },
       {
         path: '*',

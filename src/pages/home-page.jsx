@@ -1,17 +1,21 @@
 import React from "react";
+import { Box, Container, Typography } from "@mui/material";
 
 function Home() {
-
   return (
     <>
-      <main>
-        Vite app
-      </main>
-      <footer>
-        Whiteboxed Footer
-      </footer>
+      <Container variant="main">
+        <Box className="banner">
+          <Box>
+            <Typography variant="h1">
+              Welcome! My name is Robin Balatbat.
+            </Typography>
+            <p>TODO - Work on basic verbiage.</p>
+          </Box>
+        </Box>
+      </Container>
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;
