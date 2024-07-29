@@ -1,34 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import {
+    createBrowserRouter,
+    RouterProvider,
+    Outlet
+} from "react-router-dom"
+import {
+  Container
+} from '@mui/material'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Home from './pages/home-page.jsx'
+import ErrorPage from './pages/error-page.jsx'
+import { CssBaseline, ThemeProvider, useMediaQuery, createTheme } from '@mui/material'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const Layout = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Hello World!</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <Container>
+        <Outlet />
+      </Container>
+      <Footer />
     </>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/about',
+        element: <div>About</div>
+      },
+      {
+        path: '/projects',
+        element: <div>Mocked</div>
+      },
+      {
+        path: '/blog',
+        element: <div>Blog Blog Blog</div>
+      },
+      {
+        path: '*',
+        element: <ErrorPage />
+      }
+    ]
+  }
+])
+
+const App = () => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+    () => createTheme({
+      palette: {
+        mode: prefersDarkMode ? 'dark' : 'light',
+      },
+    }),
+    [prefersDarkMode],
+  );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router}/>
+      <CssBaseline enableColorScheme/>
+    </ThemeProvider>
   )
 }
 
