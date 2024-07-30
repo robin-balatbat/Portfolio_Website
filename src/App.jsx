@@ -43,6 +43,10 @@ const router = createHashRouter([
         element: <div>Mocked</div>
       },
       {
+        path: '/contact',
+        element: <div>Mocked</div>
+      },
+      {
         path: '*',
         element: <ErrorPage />
       }
