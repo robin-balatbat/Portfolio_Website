@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, Box, Link, Toolbar } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 import { navbarLinks } from "../utils/Constants";
+import ThemeSelector from "./ThemeSelector";
 
 const Header = () => {
   return (
@@ -53,6 +54,7 @@ const Header = () => {
               {item.linkLabel}
             </Link>
           ))}
+          <ThemeSelector />
         </Box>
       </Toolbar>
     </AppBar>
