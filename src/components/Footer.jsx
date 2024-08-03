@@ -7,7 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
-    <Box>
+    <Box component="footer">
       <BottomNavigation showLabels>
         <BottomNavigationAction label="Reddit" icon={<RedditIcon />} />
         <BottomNavigationAction label="Twitter" icon={<TwitterIcon />} />
