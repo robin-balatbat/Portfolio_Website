@@ -2,7 +2,7 @@ import { createContext, useMemo, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
 
 export const ThemeContext = createContext({
-  switchColorMode: () => {},
+  switchColorMode: () => {}
 });
 
 const ThemeContextProvider = ({ children }) => {
@@ -16,8 +16,8 @@ const ThemeContextProvider = ({ children }) => {
     () =>
       createTheme({
         palette: {
-          mode: mode,
-        },
+          mode: mode
+        }
       }),
     [mode]
   );

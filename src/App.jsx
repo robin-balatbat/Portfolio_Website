@@ -1,5 +1,3 @@
-import React from "react";
-
 import { CssBaseline } from "@mui/material";
 import RouterContextProvider from "./utils/routes/RouterContextProvider";
 

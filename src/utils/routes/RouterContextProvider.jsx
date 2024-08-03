@@ -1,4 +1,3 @@
-import React from "react";
 import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Container } from "@mui/material";
 import Header from "../../components/Header.jsx";
@@ -26,26 +25,26 @@ const RouterContextProvider = () => {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home />
         },
         {
           path: "/about",
-          element: <div>About</div>,
+          element: <div>About</div>
         },
         {
           path: "/projects",
-          element: <div>Mocked</div>,
+          element: <div>Mocked</div>
         },
         {
           path: "/contact",
-          element: <div>Mocked</div>,
+          element: <div>Mocked</div>
         },
         {
           path: "*",
-          element: <ErrorPage />,
-        },
-      ],
-    },
+          element: <ErrorPage />
+        }
+      ]
+    }
   ]);
 
   return <RouterProvider router={router} />;

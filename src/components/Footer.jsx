@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
 import RedditIcon from "@mui/icons-material/Reddit";
 import TwitterIcon from "@mui/icons-material/Twitter";

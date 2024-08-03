@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Image from "../components/Image";
 import PersonalImage from "../assets/Personal_Image.jpeg";
 
@@ -28,7 +27,7 @@ export default function Home() {
               alt={"Robin at a pier in Vancouver, BC, Canada"}
               sx={{
                 height: "500px",
-                width: "auto",
+                width: "auto"
               }}
             />
           </Grid>
