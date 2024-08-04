@@ -1,64 +1,176 @@
-import { AppBar, Box, Link, Toolbar } from "@mui/material";
+import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { NavLink as RouterLink } from "react-router-dom";
-import { navbarLinks } from "../utils/Constants";
-import ThemeSelector from "./ThemeSelector";
 
-const Header = () => {
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Divider,
+  Drawer,
+  MenuItem,
+  Toolbar,
+  Typography
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+
+import ToggleColorMode from "./ToggleColorMode";
+
+import { navbarLinks } from "../utils/Constants";
+
+import PersonalLogo from "../assets/Personal_Logo.png";
+
+const logoStyle = {
+  width: "auto",
+  height: "36px",
+  cursor: "pointer",
+  borderRadius: "25px",
+  marginLeft: "1rem"
+};
+
+function Header() {
   const theme = useTheme();
 
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const sectionElement = document.getElementById(sectionId);
+    const offset = 128;
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset;
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: targetScroll,
+        behavior: "smooth"
+      });
+      setOpen(false);
+    }
+  };
+
   return (
-    <AppBar
-      position="sticky"
-      color="primary"
-      sx={{
-        borderRadius: "4px",
-        margin: "1rem auto",
-        boxShadow: "0px 2px 5px #919191",
-        width: "75%",
-        padding: '2px'
-      }}
-    >
-      <Toolbar disableGutters>
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "center",
-            gap: "1rem"
-          }}
-        >
-          {navbarLinks.map((item) => (
-            <Link
-              color="inherit"
-              component={RouterLink}
-              to={item.link}
-              key={item.linkLabel}
-              variant="button"
+    <header>
+      <AppBar
+        position="fixed"
+        sx={{
+          boxShadow: 0,
+          bgcolor: "transparent",
+          backgroundImage: "none",
+          mt: 2
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar
+            variant="regular"
+            sx={(theme) => ({
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexShrink: 0,
+              borderRadius: "999px",
+              bgcolor:
+                theme.palette.mode === "light"
+                  ? "rgba(255, 255, 255, 0.4)"
+                  : "rgba(0, 0, 0, 0.4)",
+              backdropFilter: "blur(24px)",
+              maxHeight: 40,
+              border: "1px solid",
+              borderColor: "divider",
+              boxShadow:
+                theme.palette.mode === "light"
+                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
+                  : "0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)"
+            })}
+          >
+            <Box
               sx={{
-                textDecoration: "none",
-                fontSize: "1em",
-                "&:hover": {
-                  textDecoration: "underline",
-                  transition: "all 0.5s ease-out"
-                },
-                "&:focus": {
-                  textDecoration: "underline",
-                  transition: "all 1s ease-out"
-                },
-                "&.active": {
-                  textDecoration: "underline"
-                }
+                flexGrow: 1,
+                display: "flex",
+                alignItems: "center",
+                ml: "-18px",
+                px: 0
               }}
             >
-              {item.linkLabel}
-            </Link>
-          ))}
-          <ThemeSelector />
-        </Box>
-      </Toolbar>
-    </AppBar>
+              <img
+                src={PersonalLogo}
+                style={logoStyle}
+                alt="Robin Balatbat personal logo"
+              />
+              <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                {navbarLinks.map((item) => (
+                  <MenuItem
+                    onClick={() => scrollToSection("features")}
+                    sx={{ py: "6px", px: "12px" }}
+                    key={item.linkLabel}
+                  >
+                    <Typography variant="body2" color="text.primary">
+                      {item.linkLabel}
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 0.5,
+                alignItems: "center"
+              }}
+            >
+              <ToggleColorMode />
+            </Box>
+            <Box sx={{ display: { sm: "", md: "none" } }}>
+              <Button
+                variant="text"
+                color="primary"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+                sx={{ minWidth: "30px", p: "4px" }}
+              >
+                <MenuIcon />
+              </Button>
+              <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
+                <Box
+                  sx={{
+                    minWidth: "60dvw",
+                    p: 2,
+                    backgroundColor: "background.paper",
+                    flexGrow: 1
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "end",
+                      flexGrow: 1
+                    }}
+                  >
+                    <ToggleColorMode />
+                  </Box>
+                  {navbarLinks.map((item) => (
+                    <MenuItem
+                      onClick={() => scrollToSection("features")}
+                      sx={{ py: "6px", px: "12px" }}
+                      key={item.linkLabel}
+                    >
+                      <Typography variant="body2" color="text.primary">
+                        {item.linkLabel}
+                      </Typography>
+                    </MenuItem>
+                  ))}
+                  <Divider />
+                </Box>
+              </Drawer>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </header>
   );
-};
+}
 
 export default Header;
