@@ -1,5 +1,5 @@
 import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
-import { Container } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 import Home from "../../pages/home-page.jsx";
@@ -9,9 +9,11 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Container component="main" className="container" maxWidth={"xl"}>
-        <Outlet />
-      </Container>
+      <Paper elevation={8} className="background-paper" square={false}>
+        <Container component="main">
+          <Outlet />
+        </Container>
+      </Paper>
       <Footer />
     </>
   );

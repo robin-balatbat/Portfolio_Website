@@ -1,18 +1,22 @@
 import { AppBar, Box, Link, Toolbar } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { NavLink as RouterLink } from "react-router-dom";
 import { navbarLinks } from "../utils/Constants";
 import ThemeSelector from "./ThemeSelector";
 
 const Header = () => {
+  const theme = useTheme();
+
   return (
     <AppBar
       position="sticky"
       color="primary"
       sx={{
-        borderRadius: "15rem",
-        maxWidth: "30%",
+        borderRadius: "4px",
         margin: "1rem auto",
-        boxShadow: "0px 2px 5px #919191"
+        boxShadow: "0px 2px 5px #919191",
+        width: "75%",
+        padding: '2px'
       }}
     >
       <Toolbar disableGutters>
@@ -35,17 +39,14 @@ const Header = () => {
                 textDecoration: "none",
                 fontSize: "1em",
                 "&:hover": {
-                  color: "#0FFFFF",
                   textDecoration: "underline",
                   transition: "all 0.5s ease-out"
                 },
                 "&:focus": {
-                  color: "#0FFFFF",
                   textDecoration: "underline",
                   transition: "all 1s ease-out"
                 },
                 "&.active": {
-                  color: "#00FFFF",
                   textDecoration: "underline"
                 }
               }}

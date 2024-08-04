@@ -1,7 +1,5 @@
-.container {
-  height: 100vh;
-}
-
-.banner {
-  width: 100vw;
+.background-paper {
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
 }

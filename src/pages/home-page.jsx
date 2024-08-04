@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Container className="banner">
         <Grid container gap={1}>
-          <Grid item xs={8}>
+          <Grid item xs={7}>
             <Typography variant="h1">
               Welcome! My name is Robin Balatbat.
             </Typography>
