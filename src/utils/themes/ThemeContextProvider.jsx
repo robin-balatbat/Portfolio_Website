@@ -1,5 +1,6 @@
 import { createContext, useMemo, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material";
+import getTheme from "./getTheme";
 
 export const ThemeContext = createContext({
   switchColorMode: () => {}
@@ -12,15 +13,7 @@ const ThemeContextProvider = ({ children }) => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: mode
-        }
-      }),
-    [mode]
-  );
+  const theme = useMemo(() => createTheme(getTheme(mode)), [mode]);
 
   return (
     <ThemeContext.Provider value={{ switchColorMode }}>
