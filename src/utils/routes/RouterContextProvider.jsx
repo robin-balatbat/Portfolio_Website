@@ -10,7 +10,6 @@ const Layout = () => {
     <>
       <Header />
       <Box
-        elevation={8}
         sx={(theme) => ({
           width: "100%",
           backgroundImage:
@@ -21,7 +20,6 @@ const Layout = () => {
           backgroundRepeat: "no-repeat",
           bgcolor: "background.default"
         })}
-        square={false}
       >
         <Outlet />
         <Footer />

@@ -29,7 +29,6 @@ const logoStyle = {
 };
 
 function Header() {
-
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {

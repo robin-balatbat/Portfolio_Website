@@ -18,11 +18,11 @@ const Footer = () => {
           margin: "1rem auto",
           boxShadow: "0px 2px 5px #919191",
           width: "75%",
-          height: '64px',
-          padding: '4px'
+          height: "64px",
+          padding: "4px"
         }}
       >
-        <BottomNavigationAction label="Reddit" icon={<RedditIcon />}/>
+        <BottomNavigationAction label="Reddit" icon={<RedditIcon />} />
         <BottomNavigationAction label="Twitter" icon={<TwitterIcon />} />
         <BottomNavigationAction label="Instagram" icon={<InstagramIcon />} />
         <BottomNavigationAction label="YouTube" icon={<YouTubeIcon />} />
