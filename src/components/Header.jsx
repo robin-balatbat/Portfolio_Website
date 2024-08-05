@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
+import { NavLink as RouterLink } from "react-router-dom";
 
 import {
   AppBar,
@@ -8,6 +8,7 @@ import {
   Container,
   Divider,
   Drawer,
+  Link,
   MenuItem,
   Toolbar,
   Typography
@@ -25,7 +26,7 @@ const logoStyle = {
   height: "36px",
   cursor: "pointer",
   borderRadius: "25px",
-  marginLeft: "1rem"
+  margin: "0 2rem 0 1rem",
 };
 
 function Header() {
@@ -99,15 +100,19 @@ function Header() {
               />
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {navbarLinks.map((item) => (
-                  <MenuItem
-                    onClick={() => scrollToSection("features")}
-                    sx={{ py: "6px", px: "12px" }}
+                  <Link
+                    component={RouterLink}
+                    to={item.link}
+                    sx={{
+                      py: "6px",
+                      px: "12px"
+                    }}
                     key={item.linkLabel}
                   >
                     <Typography variant="body2" color="text.primary">
                       {item.linkLabel}
                     </Typography>
-                  </MenuItem>
+                  </Link>
                 ))}
               </Box>
             </Box>
@@ -150,15 +155,19 @@ function Header() {
                     <ToggleColorMode />
                   </Box>
                   {navbarLinks.map((item) => (
-                    <MenuItem
-                      onClick={() => scrollToSection("features")}
-                      sx={{ py: "6px", px: "12px" }}
+                    <Link
+                      component={RouterLink}
+                      to={item.link}
+                      sx={{
+                        py: "6px",
+                        px: "12px"
+                      }}
                       key={item.linkLabel}
                     >
                       <Typography variant="body2" color="text.primary">
                         {item.linkLabel}
                       </Typography>
-                    </MenuItem>
+                    </Link>
                   ))}
                   <Divider />
                 </Box>

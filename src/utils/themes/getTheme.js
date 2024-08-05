@@ -447,12 +447,16 @@ export default function getTheme(mode) {
               content: '""',
               position: "absolute",
               width: 0,
-              height: "1px",
+              height: "2px",
               bottom: 0,
               left: 0,
               backgroundColor: brand[200],
               opacity: 0.7,
               transition: "width 0.3s ease, opacity 0.3s ease"
+            },
+            "&.active::before": {
+              width: "100%",
+              opacity: 1
             },
             "&:hover::before": {
               width: "100%",

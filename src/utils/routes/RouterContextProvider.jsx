@@ -3,6 +3,7 @@ import { alpha, Box, Divider } from "@mui/material";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 import Home from "../../pages/home-page.jsx";
+import Projects from '../../pages/projects-page.jsx';
 import ErrorPage from "../../pages/error-page.jsx";
 
 const Layout = () => {
@@ -40,12 +41,8 @@ const RouterContextProvider = () => {
           element: <Home />
         },
         {
-          path: "/about",
-          element: <div>About</div>
-        },
-        {
           path: "/projects",
-          element: <div>Mocked</div>
+          element: <Projects />
         },
         {
           path: "/contact",
