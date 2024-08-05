@@ -7,7 +7,7 @@ export default function Hero({ title, paragraphContent }) {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "left",
+          alignItems: { xs: "center", sm: "start" },
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 }
         }}
@@ -17,6 +17,7 @@ export default function Hero({ title, paragraphContent }) {
             component="span"
             variant="h1"
             sx={{
+              textAlign: { xs: "center", sm: "left" },
               fontSize: "clamp(3rem, 10vw, 4rem)",
               color: (theme) =>
                 theme.palette.mode === "light"
@@ -27,9 +28,12 @@ export default function Hero({ title, paragraphContent }) {
             {title}
           </Typography>
           <Typography
-            textAlign="left"
             color="text.secondary"
-            sx={{ alignSelf: "left", width: { sm: "100%", md: "80%" } }}
+            sx={{
+              alignSelf: { xs: "center", sm: "start" },
+              width: { sm: "100%", md: "80%" },
+              textAlign: { xs: "center", sm: "left" }
+            }}
           >
             {paragraphContent}
           </Typography>
