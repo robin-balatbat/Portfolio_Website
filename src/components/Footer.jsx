@@ -1,11 +1,20 @@
-import { Box, Button, Container, IconButton, Link, Stack, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Link,
+  Stack,
+  TextField,
+  Typography
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import RedditIcon from "@mui/icons-material/Reddit";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import FacebookIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import PersonalLogo from "../assets/Personal_Logo.png";
 
@@ -20,45 +29,46 @@ const logoStyle = {
 const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
+      {"Copyright © "}
       <Link href="https://mui.com/">Sitemark&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
-}
+};
 
 const Footer = () => {
   const theme = useTheme();
 
   return (
     <Container
+      component="footer"
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         gap: { xs: 4, sm: 8 },
         py: { xs: 8, sm: 10 },
-        textAlign: { sm: 'center', md: 'left' },
+        textAlign: { sm: "center", md: "left" }
       }}
     >
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          width: '100%',
-          justifyContent: 'space-between',
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          width: "100%",
+          justifyContent: "space-between"
         }}
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             gap: 4,
-            minWidth: { xs: '100%', sm: '60%' },
+            minWidth: { xs: "100%", sm: "60%" }
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-            <Box sx={{ ml: '-15px' }}>
+          <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
+            <Box sx={{ ml: "-15px" }}>
               <img
                 src={PersonalLogo}
                 style={logoStyle}
@@ -81,11 +91,15 @@ const Footer = () => {
                 aria-label="Enter your email address"
                 placeholder="Your email address"
                 inputProps={{
-                  autoComplete: 'off',
-                  'aria-label': 'Enter your email address',
+                  autoComplete: "off",
+                  "aria-label": "Enter your email address"
                 }}
               />
-              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ flexShrink: 0 }}
+              >
                 Subscribe
               </Button>
             </Stack>
@@ -93,9 +107,9 @@ const Footer = () => {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
+            gap: 1
           }}
         >
           <Typography variant="body2" fontWeight={600}>
@@ -119,9 +133,9 @@ const Footer = () => {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
+            gap: 1
           }}
         >
           <Typography variant="body2" fontWeight={600}>
@@ -139,9 +153,9 @@ const Footer = () => {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
-            gap: 1,
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
+            gap: 1
           }}
         >
           <Typography variant="body2" fontWeight={600}>
@@ -160,17 +174,21 @@ const Footer = () => {
       </Box>
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
+          display: "flex",
+          justifyContent: "space-between",
           pt: { xs: 4, sm: 8 },
-          width: '100%',
-          borderTop: '1px solid',
-          borderColor: 'divider',
+          width: "100%",
+          borderTop: "1px solid",
+          borderColor: "divider"
         }}
       >
         <div>
-          <Link color="text.secondary" href="https://github.com/mui/material-ui/tree/v5.16.6/docs/data/material/getting-started/templates/landing-page">
-            This website was made with the help of the MaterialUI Landing Page template
+          <Link
+            color="text.secondary"
+            href="https://github.com/mui/material-ui/tree/v5.16.6/docs/data/material/getting-started/templates/landing-page"
+          >
+            This website was made with the help of the MaterialUI Landing Page
+            template
           </Link>
           <Copyright />
         </div>
@@ -180,14 +198,14 @@ const Footer = () => {
           spacing={1}
           useFlexGap
           sx={{
-            color: 'text.secondary',
+            color: "text.secondary"
           }}
         >
           <IconButton
             color="inherit"
             href="https://github.com/mui"
             aria-label="GitHub"
-            sx={{ alignSelf: 'center' }}
+            sx={{ alignSelf: "center" }}
           >
             <FacebookIcon />
           </IconButton>
@@ -195,7 +213,7 @@ const Footer = () => {
             color="inherit"
             href="https://x.com/MaterialUI"
             aria-label="X"
-            sx={{ alignSelf: 'center' }}
+            sx={{ alignSelf: "center" }}
           >
             <TwitterIcon />
           </IconButton>
@@ -203,7 +221,7 @@ const Footer = () => {
             color="inherit"
             href="https://www.linkedin.com/company/mui/"
             aria-label="LinkedIn"
-            sx={{ alignSelf: 'center' }}
+            sx={{ alignSelf: "center" }}
           >
             <LinkedInIcon />
           </IconButton>

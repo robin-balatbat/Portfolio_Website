@@ -3,7 +3,7 @@ import { alpha, Box, Divider } from "@mui/material";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 import Home from "../../pages/home-page.jsx";
-import Projects from '../../pages/projects-page.jsx';
+import Projects from "../../pages/projects-page.jsx";
 import ErrorPage from "../../pages/error-page.jsx";
 
 const Layout = () => {
@@ -11,6 +11,7 @@ const Layout = () => {
     <>
       <Header />
       <Box
+        component="main"
         sx={(theme) => ({
           width: "100%",
           backgroundImage:
@@ -24,8 +25,8 @@ const Layout = () => {
       >
         <Outlet />
         <Divider />
-        <Footer />
       </Box>
+      <Footer />
     </>
   );
 };

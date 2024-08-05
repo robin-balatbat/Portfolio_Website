@@ -26,7 +26,7 @@ const logoStyle = {
   height: "36px",
   cursor: "pointer",
   borderRadius: "25px",
-  margin: "0 2rem 0 1rem",
+  margin: "0 2rem 0 1rem"
 };
 
 function Header() {
@@ -34,20 +34,6 @@ function Header() {
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
-  };
-
-  const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId);
-    const offset = 128;
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset;
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-      window.scrollTo({
-        top: targetScroll,
-        behavior: "smooth"
-      });
-      setOpen(false);
-    }
   };
 
   return (
