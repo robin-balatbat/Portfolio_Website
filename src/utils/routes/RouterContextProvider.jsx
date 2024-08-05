@@ -1,5 +1,5 @@
 import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
-import { alpha, Box } from "@mui/material";
+import { alpha, Box, Divider } from "@mui/material";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 import Home from "../../pages/home-page.jsx";
@@ -22,6 +22,7 @@ const Layout = () => {
         })}
       >
         <Outlet />
+        <Divider />
         <Footer />
       </Box>
     </>
