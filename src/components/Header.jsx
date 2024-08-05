@@ -29,7 +29,6 @@ const logoStyle = {
 };
 
 function Header() {
-  const theme = useTheme();
 
   const [open, setOpen] = React.useState(false);
 
