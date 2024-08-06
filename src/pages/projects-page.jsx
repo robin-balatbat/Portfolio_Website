@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 import { Container, Typography, Grid, Stack } from "@mui/material";
 
@@ -6,7 +6,15 @@ import Hero from "../components/Hero";
 import FeaturedProjects from "../components/FeaturedProjects";
 import { featuredProjects } from "../utils/Constants";
 
+import PersonalImage from "../assets/Personal_Image.jpeg";
+
 const Projects = () => {
+  const projectCards = useMemo(() => (
+    featuredProjects.map((item) => (
+      <FeaturedProjects key={item.title} {...item} />
+    ))
+  ), []);
+
   return (
     <>
       <Hero
@@ -16,6 +24,12 @@ const Projects = () => {
           I’ve included everything from polished web applications to fun and interactive user interfaces. Plus, I’ve thrown in some of my 
           personal game development projects where I let my creativity run wild. 
           Take a look around to see what I’ve been working on and how I blend coding with creativity to bring ideas to life."
+        image={{
+          src: PersonalImage,
+          alt: "Robin standing on a pier",
+          height: "400px",
+          width: "auto"
+        }}
       />
       <Container
         sx={{
@@ -29,11 +43,7 @@ const Projects = () => {
           <Typography variant="h2" component="h2">
             Featured Projects
           </Typography>
-          <Grid container spacing={4}>
-            {featuredProjects.map((item) => (
-              <FeaturedProjects key={item.title} {...item} />
-            ))}
-          </Grid>
+          <Grid container spacing={4}>{projectCards}</Grid>
         </Stack>
       </Container>
     </>

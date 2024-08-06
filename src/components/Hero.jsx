@@ -1,15 +1,17 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 
-export default function Hero({ title, paragraphContent }) {
+export default function Hero({ title, paragraphContent, image }) {
+  const { src, alt, height, width } = image;
   return (
     <Box id="hero">
       <Container
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: {xs: "column", sm: "row"},
           alignItems: { xs: "center", sm: "start" },
           pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 }
+          pb: { xs: 8, sm: 12 },
+          gap: "1rem"
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
@@ -38,6 +40,15 @@ export default function Hero({ title, paragraphContent }) {
             {paragraphContent}
           </Typography>
         </Stack>
+        {image && (
+          <img
+            src={src}
+            alt={alt}
+            height={height}
+            width={width}
+            style={{ borderRadius: "14px" }}
+          />
+        )}
       </Container>
     </Box>
   );
