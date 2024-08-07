@@ -10,14 +10,14 @@ export const featuredProjects = [
     description: "My long-term game project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   },
   {
     title: "Lorem ipsum",
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   },
   ,
   {
@@ -25,27 +25,27 @@ export const featuredProjects = [
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   },
   {
     title: "Lorem ipsum",
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   },
   {
     title: "Lorem ipsum",
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   },
   {
     title: "Lorem ipsum",
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",
-    cardLink: "#"
+    cardLink: "/wip"
   }
 ];

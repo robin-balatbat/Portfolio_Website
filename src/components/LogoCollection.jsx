@@ -12,9 +12,8 @@ const logoStyle = {
 };
 
 const LogoCollection = ({ headline, logos }) => {
-
   return (
-    <Box id="logoCollection" sx={{ py: 4 }}>
+    <Box id="logoCollection" sx={{ py: 4, }}>
       <Typography
         component="p"
         variant="subtitle2"
@@ -26,11 +25,7 @@ const LogoCollection = ({ headline, logos }) => {
       <Grid container justifyContent="center" sx={{ mt: 4 }}>
         {logos.map((logo, index) => (
           <Grid item key={index}>
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              style={logoStyle}
-            />
+            <img src={logo.src} alt={logo.alt} style={logoStyle} />
           </Grid>
         ))}
       </Grid>

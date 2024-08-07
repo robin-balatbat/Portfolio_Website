@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.jsx";
 import Home from "../../pages/home-page.jsx";
 import Projects from "../../pages/projects-page.jsx";
 import ErrorPage from "../../pages/error-page.jsx";
+import InProgress from "../../pages/in-progress-page.jsx";
 
 const Layout = () => {
   return (
@@ -47,7 +48,11 @@ const RouterContextProvider = () => {
         },
         {
           path: "/contact",
-          element: <div>Mocked</div>
+          element: <InProgress />
+        },
+        {
+          path: "/wip",
+          element: <InProgress />
         },
         {
           path: "*",

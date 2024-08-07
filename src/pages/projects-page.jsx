@@ -22,7 +22,7 @@ const logos = [
   },
   {
     src: TypescriptLogo,
-    alt: "TypeScript",
+    alt: "TypeScript"
   },
   {
     src: ReactIcon,
@@ -36,7 +36,7 @@ const logos = [
     src: UnityLogo,
     alt: "Unity"
   }
-]
+];
 
 const Projects = () => {
   const projectCards = useMemo(
@@ -63,7 +63,7 @@ const Projects = () => {
           width: "auto"
         }}
       />
-      <LogoCollection headline="Technical Skills" logos={logos}/>
+      <LogoCollection headline="Technical Skills" logos={logos} />
       <Container
         sx={{
           display: "flex",

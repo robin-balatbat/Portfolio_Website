@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink as RouterLink } from "react-router-dom";
 import {
   Card,
   CardActionArea,
@@ -17,7 +18,7 @@ const FeaturedProjects = ({
 }) => {
   return (
     <Grid item xs={12} md={6}>
-      <CardActionArea component="a" href={cardLink}>
+      <CardActionArea component={RouterLink} to={cardLink}>
         <Card sx={{ display: "flex" }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h3" variant="h5">
