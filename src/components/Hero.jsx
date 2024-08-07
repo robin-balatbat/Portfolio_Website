@@ -7,7 +7,7 @@ export default function Hero({ title, paragraphContent, image }) {
       <Container
         sx={{
           display: "flex",
-          flexDirection: {xs: "column", sm: "row"},
+          flexDirection: { xs: "column", sm: "row" },
           alignItems: { xs: "center", sm: "start" },
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },

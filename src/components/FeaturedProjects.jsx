@@ -8,8 +8,13 @@ import {
   Typography
 } from "@mui/material";
 
-const FeaturedProjects = ({ title, description, imageSrc, imageAlt, cardLink}) => {
-
+const FeaturedProjects = ({
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+  cardLink
+}) => {
   return (
     <Grid item xs={12} md={6}>
       <CardActionArea component="a" href={cardLink}>

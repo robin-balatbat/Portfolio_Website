@@ -47,5 +47,5 @@ export const featuredProjects = [
     imageSrc: "#",
     imageAlt: "Mocked",
     cardLink: "#"
-  },
+  }
 ];

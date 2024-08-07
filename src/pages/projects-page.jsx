@@ -4,16 +4,48 @@ import { Container, Typography, Grid, Stack } from "@mui/material";
 
 import Hero from "../components/Hero";
 import FeaturedProjects from "../components/FeaturedProjects";
+import LogoCollection from "../components/LogoCollection";
 import { featuredProjects } from "../utils/Constants";
 
 import PersonalImage from "../assets/Personal_Image.jpeg";
 
+import Csharp from "../assets/Csharp_Logo.png";
+import JavascriptLogo from "../assets/JavaScript-logo.png";
+import ReactIcon from "../assets/React-icon.png";
+import TypescriptLogo from "../assets/Typescript_logo_2020.png";
+import UnityLogo from "../assets/Unity_Logo.png";
+
+const logos = [
+  {
+    src: JavascriptLogo,
+    alt: "JavaScript"
+  },
+  {
+    src: TypescriptLogo,
+    alt: "TypeScript",
+  },
+  {
+    src: ReactIcon,
+    alt: "React"
+  },
+  {
+    src: Csharp,
+    alt: "C# logo"
+  },
+  {
+    src: UnityLogo,
+    alt: "Unity"
+  }
+]
+
 const Projects = () => {
-  const projectCards = useMemo(() => (
-    featuredProjects.map((item) => (
-      <FeaturedProjects key={item.title} {...item} />
-    ))
-  ), []);
+  const projectCards = useMemo(
+    () =>
+      featuredProjects.map((item) => (
+        <FeaturedProjects key={item.title} {...item} />
+      )),
+    []
+  );
 
   return (
     <>
@@ -31,6 +63,7 @@ const Projects = () => {
           width: "auto"
         }}
       />
+      <LogoCollection headline="Technical Skills" logos={logos}/>
       <Container
         sx={{
           display: "flex",
@@ -43,7 +76,9 @@ const Projects = () => {
           <Typography variant="h2" component="h2">
             Featured Projects
           </Typography>
-          <Grid container spacing={4}>{projectCards}</Grid>
+          <Grid container spacing={4}>
+            {projectCards}
+          </Grid>
         </Stack>
       </Container>
     </>
