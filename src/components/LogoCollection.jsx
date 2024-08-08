@@ -7,18 +7,17 @@ const logoStyle = {
   width: "auto",
   height: "80px",
   margin: "0 32px",
-  opacity: 0.7,
-  borderRadius: "24px"
+  opacity: 0.9,
+  borderRadius: "24px",
 };
 
 const LogoCollection = ({ headline, logos }) => {
   return (
-    <Box id="logoCollection" sx={{ py: 4 }}>
+    <Box id="logoCollection" sx={{ py: 4, }}>
       <Typography
-        component="p"
-        variant="subtitle2"
+        component="h2"
+        variant="h2"
         align="center"
-        color="text.secondary"
       >
         {headline}
       </Typography>

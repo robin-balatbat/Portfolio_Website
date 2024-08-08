@@ -33,7 +33,12 @@ const FeaturedProjects = ({
           </CardContent>
           <CardMedia
             component="img"
-            sx={{ width: 160, display: { xs: "none", sm: "block" } }}
+            sx={{
+              width: "auto",
+              height: "80px",
+              display: { xs: "none", sm: "block" },
+              padding: 2
+            }}
             image={imageSrc}
             alt={imageAlt}
           />

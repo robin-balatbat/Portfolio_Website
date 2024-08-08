@@ -352,7 +352,7 @@ export default function getTheme(mode) {
         styleOverrides: {
           root: ({ theme, ownerState }) => ({
             backgroundColor: gray[50],
-            borderRadius: 10,
+            borderRadius: 12,
             border: `1px solid ${alpha(gray[200], 0.8)}`,
             boxShadow: "none",
             transition: "background-color, border, 80ms ease",
@@ -373,7 +373,7 @@ export default function getTheme(mode) {
                 )})`,
                 "&:hover": {
                   borderColor: brand[700],
-                  boxShadow: `0 0 24px ${brand[800]}`
+                  boxShadow: `0 0 24px ${brand[800]}`,
                 }
               })
             })

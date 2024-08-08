@@ -41,8 +41,8 @@ const logos = [
 const Projects = () => {
   const projectCards = useMemo(
     () =>
-      featuredProjects.map((item) => (
-        <FeaturedProjects key={item.title} {...item} />
+      featuredProjects.map((item, index) => (
+        <FeaturedProjects key={item.title + index} {...item} />
       )),
     []
   );
@@ -72,7 +72,7 @@ const Projects = () => {
           pb: { xs: 2, sm: 4 }
         }}
       >
-        <Stack spacing={4} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
+        <Stack spacing={4} useFlexGap sx={{ width: "100%" }}>
           <Typography variant="h2" component="h2">
             Featured Projects
           </Typography>
