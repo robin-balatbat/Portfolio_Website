@@ -1,11 +1,9 @@
 import {
   Box,
-  Button,
   Container,
   IconButton,
   Link,
   Stack,
-  TextField,
   Typography
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -15,6 +13,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 import PersonalLogo from "../assets/Personal_Logo.png";
 
@@ -30,7 +29,8 @@ const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
       {"Copyright © "}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+      <Link href="https://mui.com/">Robin Balatbat&nbsp;</Link>
+      {"2024 - "}
       {new Date().getFullYear()}
     </Typography>
   );
@@ -48,128 +48,84 @@ const Footer = () => {
         alignItems: "center",
         gap: { xs: 4, sm: 8 },
         py: { xs: 8, sm: 10 },
-        textAlign: { sm: "center", md: "left" }
+        textAlign: "center"
       }}
     >
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: "column",
           width: "100%",
-          justifyContent: "space-between"
+          justifyContent: "center",
+          gap: 4
         }}
       >
+        <Box sx={{ alignSelf: "center" }}>
+          <img
+            src={PersonalLogo}
+            style={logoStyle}
+            alt="Robin Balatbat personal logo"
+          />
+        </Box>
         <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            gap: 4,
-            minWidth: { xs: "100%", sm: "60%" }
+            flexDirection: "row",
+            gap: 2,
+            justifyContent: { xs: "space-around", sm: "space-evenly" }
           }}
         >
-          <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
-            <Box sx={{ ml: "-15px" }}>
-              <img
-                src={PersonalLogo}
-                style={logoStyle}
-                alt="Robin Balatbat personal logo"
-              />
-            </Box>
-            <Typography variant="body2" fontWeight={600} gutterBottom>
-              Newsletter
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 1
+            }}
+          >
+            <Typography variant="body2" fontWeight={600}>
+              Home
             </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2}>
-              Subscribe to our newsletter for weekly updates and promotions.
-            </Typography>
-            <Stack direction="row" spacing={1} useFlexGap>
-              <TextField
-                id="outlined-basic"
-                hiddenLabel
-                size="small"
-                variant="outlined"
-                fullWidth
-                aria-label="Enter your email address"
-                placeholder="Your email address"
-                inputProps={{
-                  autoComplete: "off",
-                  "aria-label": "Enter your email address"
-                }}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{ flexShrink: 0 }}
-              >
-                Subscribe
-              </Button>
-            </Stack>
+            <Link color="text.secondary" href="#">
+              About Me
+            </Link>
+            <Link color="text.secondary" href="#">
+              Highlights
+            </Link>
           </Box>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            gap: 1
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Projects
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Features
-          </Link>
-          <Link color="text.secondary" href="#">
-            Testimonials
-          </Link>
-          <Link color="text.secondary" href="#">
-            Highlights
-          </Link>
-          <Link color="text.secondary" href="#">
-            Pricing
-          </Link>
-          <Link color="text.secondary" href="#">
-            FAQs
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            gap: 1
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Company
-          </Typography>
-          <Link color="text.secondary" href="#">
-            About us
-          </Link>
-          <Link color="text.secondary" href="#">
-            Careers
-          </Link>
-          <Link color="text.secondary" href="#">
-            Press
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            gap: 1
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            Legal
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Terms
-          </Link>
-          <Link color="text.secondary" href="#">
-            Privacy
-          </Link>
-          <Link color="text.secondary" href="#">
-            Contact
-          </Link>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 1
+            }}
+          >
+            <Typography variant="body2" fontWeight={600}>
+              Projects
+            </Typography>
+            <Link color="text.secondary" href="#">
+              Featured Projects
+            </Link>
+            <Link color="text.secondary" href="#">
+              Future Projects
+            </Link>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 1
+            }}
+          >
+            <Typography variant="body2" fontWeight={600}>
+              Contact
+            </Typography>
+            <Link color="text.secondary" href="#">
+              Form
+            </Link>
+            <Link color="text.secondary" href="#">
+              Resume
+            </Link>
+          </Box>
         </Box>
       </Box>
       <Box
@@ -182,16 +138,21 @@ const Footer = () => {
           borderColor: "divider"
         }}
       >
-        <div>
+        <Stack
+          sx={{
+            textAlign: "left"
+          }}
+        >
           <Link
+            target="_blank"
             color="text.secondary"
             href="https://github.com/mui/material-ui/tree/v5.16.6/docs/data/material/getting-started/templates/landing-page"
           >
             This website was made with the help of the MaterialUI Landing Page
-            template
+            template (opens in new tab).
           </Link>
           <Copyright />
-        </div>
+        </Stack>
         <Stack
           direction="row"
           justifyContent="left"
@@ -203,24 +164,16 @@ const Footer = () => {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
-            aria-label="GitHub"
+            href="https://github.com/robin-balatbat"
+            aria-label="Robin's GitHub"
             sx={{ alignSelf: "center" }}
           >
             <FacebookIcon />
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://x.com/MaterialUI"
-            aria-label="X"
-            sx={{ alignSelf: "center" }}
-          >
-            <TwitterIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.linkedin.com/company/mui/"
-            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/robin-balatbat/"
+            aria-label="Robin's LinkedIn"
             sx={{ alignSelf: "center" }}
           >
             <LinkedInIcon />

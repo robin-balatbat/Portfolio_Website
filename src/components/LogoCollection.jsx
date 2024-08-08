@@ -13,7 +13,7 @@ const logoStyle = {
 
 const LogoCollection = ({ headline, logos }) => {
   return (
-    <Box id="logoCollection" sx={{ py: 4, }}>
+    <Box id="logoCollection" sx={{ py: 4 }}>
       <Typography
         component="p"
         variant="subtitle2"
