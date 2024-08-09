@@ -12,12 +12,22 @@ const logoStyle = {
   borderRadius: "24px"
 };
 
-const LogoCollection = ({ headline, logos }) => {
+const LogoCollection = ({ headline, subtitle, logos }) => {
   return (
     <Box id="logoCollection" sx={{ py: 4 }}>
       {headline && (
         <Typography component="h3" variant="h3" align="center">
           {headline}
+        </Typography>
+      )}
+      {subtitle && (
+        <Typography
+          component="p"
+          variant="body"
+          sx={{ maxWidth: { xs: "100%", md: "70%"}, margin: '0 auto', padding: 1 }}
+          align="center"
+        >
+          {subtitle}
         </Typography>
       )}
       <Grid container justifyContent="center" sx={{ mt: 4 }}>
@@ -34,12 +44,12 @@ const LogoCollection = ({ headline, logos }) => {
             }}
           >
             <img src={logo.src} alt={logo.alt} style={logoStyle} />
-            {!logo.link && logo.subtitle && (
-              <Typography variant="subtitle">{logo.subtitle}</Typography>
+            {!logo.link && logo.label && (
+              <Typography variant="subtitle">{logo.label}</Typography>
             )}
-            {logo.link && logo.subtitle && (
-              <Link href={logo.link}>
-                {logo.subtitle}
+            {logo.link && logo.label && (
+              <Link href={logo.link} target="_blank">
+                {logo.label}
               </Link>
             )}
           </Grid>

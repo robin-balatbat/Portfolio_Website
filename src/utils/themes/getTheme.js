@@ -134,26 +134,22 @@ const getDesignTokens = (mode) => ({
     }
   },
   typography: {
-    fontFamily: ['"Noto Sans", "sans-serif"'].join(","),
+    fontFamily: ['"Poppins", "Helvetica", "Arial", "sans-serif"'].join(","),
     h1: {
       fontSize: 60,
-      fontWeight: 600,
-      lineHeight: 78 / 70,
-      letterSpacing: -0.2
+      fontWeight: 500,
     },
     h2: {
       fontSize: 48,
-      fontWeight: 600,
-      lineHeight: 1.2
+      fontWeight: 500,
     },
     h3: {
       fontSize: 42,
-      lineHeight: 1.2
+      fontWeight: 400,
     },
     h4: {
       fontSize: 36,
-      fontWeight: 500,
-      lineHeight: 1.5
+      fontWeight: 400,
     },
     h5: {
       fontSize: 20,
@@ -169,15 +165,15 @@ const getDesignTokens = (mode) => ({
       fontSize: 16
     },
     body1: {
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: 15
     },
     body2: {
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: 14
     },
     caption: {
-      fontWeight: 400,
+      fontWeight: 300,
       fontSize: 12
     }
   }

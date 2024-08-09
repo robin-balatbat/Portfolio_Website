@@ -85,10 +85,10 @@ const Footer = () => {
             <Typography variant="body2" fontWeight={600}>
               Home
             </Typography>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="/">
               About Me
             </Link>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="/">
               Highlights
             </Link>
           </Box>
@@ -102,10 +102,10 @@ const Footer = () => {
             <Typography variant="body2" fontWeight={600}>
               Projects
             </Typography>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="#/projects">
               Featured Projects
             </Link>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="#/projects">
               Future Projects
             </Link>
           </Box>
@@ -119,10 +119,10 @@ const Footer = () => {
             <Typography variant="body2" fontWeight={600}>
               Contact
             </Typography>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="#/contact">
               Form
             </Link>
-            <Link color="text.secondary" href="#">
+            <Link color="text.secondary" href="#/contact">
               Resume
             </Link>
           </Box>

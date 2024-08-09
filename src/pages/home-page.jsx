@@ -18,27 +18,27 @@ const techLogos = [
   {
     src: JavascriptLogo,
     alt: "JavaScript",
-    subtitle: "JavaScript"
+    label: "JavaScript"
   },
   {
     src: TypescriptLogo,
     alt: "TypeScript",
-    subtitle: "TypeScript"
+    label: "TypeScript"
   },
   {
     src: ReactIcon,
     alt: "React",
-    subtitle: "React"
+    label: "React"
   },
   {
     src: Csharp,
     alt: "C# logo",
-    subtitle: "C#"
+    label: "C#"
   },
   {
     src: UnityLogo,
     alt: "Unity",
-    subtitle: "Unity"
+    label: "Unity"
   }
 ];
 
@@ -46,19 +46,19 @@ const certLogos = [
   {
     src: AWSLogo,
     alt: "AWS Certified Cloud Practitioner",
-    subtitle: "AWS Certified",
+    label: "AWS Certified",
     link: "https://www.credly.com/badges/13cc9706-a7b2-4588-bf95-6f1f3752a65e/public_url"
   },
   {
     src: GCPLogo,
     alt: "Google Cloud Digital Leader Certification",
-    subtitle: "Google Cloud Certified",
+    label: "Google Cloud Certified",
     link: "https://www.credly.com/badges/28a0e06e-6669-4be6-961d-cf8d899b4e3f/public_url"
   },
   {
     src: AzureLogo,
     alt: "Microsoft Certified: Azure Fundamentals",
-    subtitle: "Azure",
+    label: "Azure",
     link: "https://www.credly.com/badges/cfa9ab4b-55f6-46d0-a83f-eb5525830677/public_url"
   }
 ];
@@ -93,8 +93,24 @@ export default function Home() {
           About Me
         </Typography>
         <Divider />
-        <LogoCollection headline="Certifications" logos={certLogos} />
-        <LogoCollection headline="Technical Skills" logos={techLogos} />
+        <LogoCollection
+          headline="Certifications"
+          subtitle="In the past two years, I’ve earned the AWS Certified Cloud Practitioner, 
+          Google Cloud Digital Leader, and Microsoft Azure Fundamentals 
+          certifications. I actively stay on top of the latest tech trends 
+          and continuously grow my skills. The links in this section open in
+          a new tab to view my credentials on Credly."
+          logos={certLogos}
+        />
+        <LogoCollection
+          headline="Technical Skills"
+          subtitle="I’m most familiar with a range of languages and frameworks that
+           power my development work. On the front-end side, I have extensive 
+           experience with JavaScript, TypeScript, and React. 
+           For game development, I’m well-versed in C# and Unity, which I use to 
+           create engaging and interactive experiences."
+          logos={techLogos}
+        />
       </Container>
     </>
   );
