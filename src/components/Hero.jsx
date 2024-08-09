@@ -8,7 +8,7 @@ export default function Hero({ title, paragraphContent, image }) {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          alignItems: { xs: "center", sm: "start" },
+          alignItems: "center",
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
           gap: "1rem"
@@ -16,7 +16,7 @@ export default function Hero({ title, paragraphContent, image }) {
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
           <Typography
-            component="span"
+            component="h1"
             variant="h1"
             sx={{
               textAlign: { xs: "center", sm: "left" },

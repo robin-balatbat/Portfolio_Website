@@ -9,7 +9,6 @@ import {
   Divider,
   Drawer,
   Link,
-  MenuItem,
   Toolbar,
   Typography
 } from "@mui/material";

@@ -276,8 +276,8 @@ export default function getTheme(mode) {
             boxSizing: "border-box",
             transition: "all 100ms ease-in",
             "&:focus-visible": {
-              outline: `3px solid ${alpha(brand[500], 0.5)}`,
-              outlineOffset: "2px"
+              outline: `3px solid ${secondary[300]}`,
+              outlineOffset: "3px"
             }
           }
         }
@@ -302,13 +302,9 @@ export default function getTheme(mode) {
               ownerState.color === "primary" && {
                 color: brand[50],
                 background: brand[500],
-                backgroundImage: `linear-gradient(to bottom, ${brand[400]}, ${brand[600]})`,
-                boxShadow: `inset 0 1px ${alpha(brand[300], 0.4)}`,
                 outline: `1px solid ${brand[700]}`,
                 "&:hover": {
-                  background: brand[400],
-                  backgroundImage: "none",
-                  boxShadow: `0 0 0 1px  ${alpha(brand[300], 0.5)}`
+                  background: brand[700],
                 }
               }),
             ...(ownerState.variant === "outlined" && {
@@ -316,7 +312,7 @@ export default function getTheme(mode) {
               borderColor: brand[300],
               color: brand[500],
               "&:hover": {
-                backgroundColor: alpha(brand[300], 0.3),
+                backgroundColor: alpha(brand[700], 0.3),
                 borderColor: brand[200]
               }
             }),
