@@ -18,27 +18,27 @@ const techLogos = [
   {
     src: JavascriptLogo,
     alt: "JavaScript",
-    headline: "JavaScript"
+    subtitle: "JavaScript"
   },
   {
     src: TypescriptLogo,
     alt: "TypeScript",
-    headline: "TypeScript"
+    subtitle: "TypeScript"
   },
   {
     src: ReactIcon,
     alt: "React",
-    headline: "React"
+    subtitle: "React"
   },
   {
     src: Csharp,
     alt: "C# logo",
-    headline: "C#"
+    subtitle: "C#"
   },
   {
     src: UnityLogo,
     alt: "Unity",
-    headline: "Unity"
+    subtitle: "Unity"
   }
 ];
 
@@ -46,19 +46,22 @@ const certLogos = [
   {
     src: AWSLogo,
     alt: "AWS Certified Cloud Practitioner",
-    headline: "AWS"
+    subtitle: "AWS Certified",
+    link: "https://www.credly.com/badges/13cc9706-a7b2-4588-bf95-6f1f3752a65e/public_url"
   },
   {
     src: GCPLogo,
     alt: "Google Cloud Digital Leader Certification",
-    headline: "Google Cloud"
+    subtitle: "Google Cloud Certified",
+    link: "https://www.credly.com/badges/28a0e06e-6669-4be6-961d-cf8d899b4e3f/public_url"
   },
   {
     src: AzureLogo,
     alt: "Microsoft Certified: Azure Fundamentals",
-    headline: "Azure"
+    subtitle: "Azure",
+    link: "https://www.credly.com/badges/cfa9ab4b-55f6-46d0-a83f-eb5525830677/public_url"
   }
-]
+];
 
 export default function Home() {
   return (
@@ -80,8 +83,19 @@ export default function Home() {
         }}
       />
       <CTABanner />
-      <LogoCollection headline="Certifications" logos={certLogos}/>
-      <LogoCollection headline="Technical Skills" logos={techLogos} />
+      <Container id="about-me" sx={{ padding: 4 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          align="center"
+          sx={{ padding: 2 }}
+        >
+          About Me
+        </Typography>
+        <Divider />
+        <LogoCollection headline="Certifications" logos={certLogos} />
+        <LogoCollection headline="Technical Skills" logos={techLogos} />
+      </Container>
     </>
   );
 }

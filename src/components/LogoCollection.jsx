@@ -2,10 +2,11 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { Link } from "@mui/material";
 
 const logoStyle = {
-  width: "auto",
-  height: "80px",
+  width: "100px",
+  height: "auto",
   margin: "0 32px",
   opacity: 0.9,
   borderRadius: "24px"
@@ -15,7 +16,7 @@ const LogoCollection = ({ headline, logos }) => {
   return (
     <Box id="logoCollection" sx={{ py: 4 }}>
       {headline && (
-        <Typography component="h2" variant="h2" align="center">
+        <Typography component="h3" variant="h3" align="center">
           {headline}
         </Typography>
       )}
@@ -33,8 +34,13 @@ const LogoCollection = ({ headline, logos }) => {
             }}
           >
             <img src={logo.src} alt={logo.alt} style={logoStyle} />
-            {logo.headline && (
-              <Typography variant="subtitle">{logo.headline}</Typography>
+            {!logo.link && logo.subtitle && (
+              <Typography variant="subtitle">{logo.subtitle}</Typography>
+            )}
+            {logo.link && logo.subtitle && (
+              <Link href={logo.link}>
+                {logo.subtitle}
+              </Link>
             )}
           </Grid>
         ))}
