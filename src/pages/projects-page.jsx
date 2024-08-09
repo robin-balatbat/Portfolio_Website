@@ -9,35 +9,6 @@ import { featuredProjects } from "../utils/Constants";
 
 import PersonalImage from "../assets/Personal_Image.jpeg";
 
-import Csharp from "../assets/Csharp_Logo.png";
-import JavascriptLogo from "../assets/JavaScript-logo.png";
-import ReactIcon from "../assets/React-icon.png";
-import TypescriptLogo from "../assets/Typescript_logo_2020.png";
-import UnityLogo from "../assets/Unity_Logo.png";
-
-const logos = [
-  {
-    src: JavascriptLogo,
-    alt: "JavaScript"
-  },
-  {
-    src: TypescriptLogo,
-    alt: "TypeScript"
-  },
-  {
-    src: ReactIcon,
-    alt: "React"
-  },
-  {
-    src: Csharp,
-    alt: "C# logo"
-  },
-  {
-    src: UnityLogo,
-    alt: "Unity"
-  }
-];
-
 const Projects = () => {
   const projectCards = useMemo(
     () =>
@@ -63,7 +34,6 @@ const Projects = () => {
           width: "auto"
         }}
       />
-      <LogoCollection headline="Technical Skills" logos={logos} />
       <Container
         sx={{
           display: "flex",
