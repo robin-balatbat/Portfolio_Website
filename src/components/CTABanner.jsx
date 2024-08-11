@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { alpha, Box, Button } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 
 const buttonStyles = {
-  width: "180px"
+  width: "200px"
 };
 
-const CTABanner = () => {
+const CTABanner = ({ buttonContent }) => {
+  const ctaButtons = useMemo(
+    () =>
+      buttonContent.map((item, index) =>
+        item.icon ? (
+          <Button
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.ariaLabel || item.label}
+            startIcon={item.icon}
+            variant={index % 2 ? "outlined" : "contained"}
+            sx={index % 2 ? { buttonStyles, color: "#55A6F6" } : buttonStyles}
+            size="large"
+          >
+            {item.label}
+          </Button>
+        ) : (
+          <Button
+            component={RouterLink}
+            to={item.link}
+            variant={index % 2 ? "outlined" : "contained"}
+            sx={index % 2 ? { buttonStyles, color: "#55A6F6" } : buttonStyles}
+            size="large"
+          >
+            {item.label}
+          </Button>
+        )
+      ),
+    []
+  );
   return (
     <Box
       sx={{
@@ -24,24 +54,7 @@ const CTABanner = () => {
           gap: 2
         }}
       >
-        <Button
-          component={RouterLink}
-          to={"/contact"}
-          variant="contained"
-          sx={buttonStyles}
-          size="large"
-        >
-          Get in contact
-        </Button>
-        <Button
-          component={RouterLink}
-          to={"/projects"}
-          variant="outlined"
-          sx={{ buttonStyles, color: "#55A6F6" }}
-          size="large"
-        >
-          Explore my projects
-        </Button>
+        {ctaButtons}
       </Box>
     </Box>
   );

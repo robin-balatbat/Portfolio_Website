@@ -19,7 +19,7 @@ export const featuredProjects = [
     cardLink: "/wip"
   },
   {
-    title: "Lorem ipsum",
+    title: "Mocked Dashboard",
     description: "Another project",
     imageSrc: ReactIcon,
     imageAlt: "Mocked",
@@ -27,7 +27,7 @@ export const featuredProjects = [
   },
   ,
   {
-    title: "Lorem ipsum",
+    title: "Mocked AI Chatbot",
     description: "Another project",
     imageSrc: "#",
     imageAlt: "Mocked",

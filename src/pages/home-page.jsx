@@ -63,7 +63,18 @@ const certLogos = [
   }
 ];
 
-export default function Home() {
+const homePageCTA = [
+  {
+    link: "/contact",
+    label: "Contact Me"
+  },
+  {
+    link: "/projects",
+    label: "View my Projects"
+  }
+];
+
+export default function HomePage() {
   return (
     <>
       <Hero
@@ -82,7 +93,7 @@ export default function Home() {
           width: "70%"
         }}
       />
-      <CTABanner />
+      <CTABanner buttonContent={homePageCTA}/>
       <Container id="about-me" sx={{ padding: 4 }}>
         <Typography
           variant="h2"

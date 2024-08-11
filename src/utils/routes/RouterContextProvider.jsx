@@ -2,10 +2,11 @@ import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import { alpha, Box, Divider } from "@mui/material";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
-import Home from "../../pages/home-page.jsx";
+import HomePage from "../../pages/home-page.jsx";
 import Projects from "../../pages/projects-page.jsx";
 import ErrorPage from "../../pages/error-page.jsx";
 import InProgress from "../../pages/in-progress-page.jsx";
+import ContactPage from "../../pages/contact-page.jsx";
 
 const Layout = () => {
   return (
@@ -40,7 +41,7 @@ const RouterContextProvider = () => {
       children: [
         {
           path: "/",
-          element: <Home />
+          element: <HomePage />
         },
         {
           path: "/projects",
@@ -48,7 +49,7 @@ const RouterContextProvider = () => {
         },
         {
           path: "/contact",
-          element: <InProgress />
+          element: <ContactPage />
         },
         {
           path: "/wip",

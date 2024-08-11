@@ -11,7 +11,7 @@ import RedditIcon from "@mui/icons-material/Reddit";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import FacebookIcon from "@mui/icons-material/GitHub";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
@@ -164,19 +164,23 @@ const Footer = () => {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/robin-balatbat"
-            aria-label="Robin's GitHub"
-            sx={{ alignSelf: "center" }}
-          >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
             href="https://www.linkedin.com/in/robin-balatbat/"
-            aria-label="Robin's LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Robin's LinkedIn (opens in new tab)"
             sx={{ alignSelf: "center" }}
           >
             <LinkedInIcon />
+          </IconButton>
+          <IconButton
+            color="inherit"
+            href="https://github.com/robin-balatbat"
+            target="_blank"
+            aria-label="Visit Robin's GitHub (opens in new tab)"
+            rel="noopener noreferrer"
+            sx={{ alignSelf: "center" }}
+          >
+            <GitHubIcon />
           </IconButton>
         </Stack>
       </Box>
