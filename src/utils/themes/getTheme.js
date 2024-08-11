@@ -435,6 +435,10 @@ export default function getTheme(mode) {
             fontWeight: 500,
             position: "relative",
             textDecoration: "none",
+            "&:focus-visible": {
+              outline: `3px solid ${secondary[300]}`,
+              outlineOffset: "3px"
+            },
             "&::before": {
               content: '""',
               position: "absolute",
