@@ -12,6 +12,7 @@ const CTABanner = ({ buttonContent }) => {
       buttonContent.map((item, index) =>
         item.icon ? (
           <Button
+            key={item.label}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -25,6 +26,7 @@ const CTABanner = ({ buttonContent }) => {
           </Button>
         ) : (
           <Button
+            key={item.label}
             component={RouterLink}
             to={item.link}
             variant={index % 2 ? "outlined" : "contained"}

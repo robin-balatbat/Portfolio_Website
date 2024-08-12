@@ -4,7 +4,6 @@ import { Container, Typography, Grid, Stack } from "@mui/material";
 
 import Hero from "../components/Hero";
 import FeaturedProjects from "../components/FeaturedProjects";
-import LogoCollection from "../components/LogoCollection";
 import { featuredProjects } from "../utils/Constants";
 
 import PersonalImage from "../assets/Personal_Image.jpeg";

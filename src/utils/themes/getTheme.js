@@ -563,6 +563,7 @@ export default function getTheme(mode) {
               }
             },
             "& .MuiOutlinedInput-root": {
+              backgroundColor: gray[100],
               boxSizing: "border-box",
               minWidth: 280,
               minHeight: 40,
@@ -577,15 +578,16 @@ export default function getTheme(mode) {
                 background: `${alpha("#FFF", 0.3)}`
               },
               "&:hover": {
-                borderColor: brand[300]
+                borderColor: secondary[300]
               },
               "&.Mui-focused": {
-                borderColor: brand[400],
-                outline: "4px solid",
-                outlineColor: brand[200]
+                borderColor: secondary[400],
+                outline: "3px solid",
+                outlineColor: secondary[200]
               }
             },
             ...(theme.palette.mode === "dark" && {
+              backgroundColor: gray[900],
               "& .MuiOutlinedInput-root": {
                 boxSizing: "border-box",
                 minWidth: 280,
@@ -601,12 +603,12 @@ export default function getTheme(mode) {
                   background: `${alpha(gray[800], 0.4)}`
                 },
                 "&:hover": {
-                  borderColor: brand[300]
+                  borderColor: secondary[300]
                 },
                 "&.Mui-focused": {
-                  borderColor: brand[400],
-                  outline: "4px solid",
-                  outlineColor: alpha(brand[500], 0.5)
+                  borderColor: secondary[400],
+                  outline: "3px solid",
+                  outlineColor: secondary[500]
                 }
               }
             })
