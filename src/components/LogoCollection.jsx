@@ -24,7 +24,11 @@ const LogoCollection = ({ headline, subtitle, logos }) => {
         <Typography
           component="p"
           variant="body"
-          sx={{ maxWidth: { xs: "100%", md: "70%"}, margin: '0 auto', padding: 1 }}
+          sx={{
+            maxWidth: { xs: "100%", md: "70%" },
+            margin: "0 auto",
+            padding: 1
+          }}
           align="center"
         >
           {subtitle}

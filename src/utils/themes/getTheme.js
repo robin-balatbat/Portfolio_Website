@@ -137,19 +137,19 @@ const getDesignTokens = (mode) => ({
     fontFamily: ['"Poppins", "Helvetica", "Arial", "sans-serif"'].join(","),
     h1: {
       fontSize: 60,
-      fontWeight: 500,
+      fontWeight: 500
     },
     h2: {
       fontSize: 48,
-      fontWeight: 500,
+      fontWeight: 500
     },
     h3: {
       fontSize: 42,
-      fontWeight: 400,
+      fontWeight: 400
     },
     h4: {
       fontSize: 36,
-      fontWeight: 400,
+      fontWeight: 400
     },
     h5: {
       fontSize: 20,
@@ -300,7 +300,7 @@ export default function getTheme(mode) {
                 background: brand[500],
                 outline: `1px solid ${brand[700]}`,
                 "&:hover": {
-                  background: brand[700],
+                  background: brand[700]
                 }
               }),
             ...(ownerState.variant === "outlined" && {
@@ -365,7 +365,7 @@ export default function getTheme(mode) {
                 )})`,
                 "&:hover": {
                   borderColor: brand[700],
-                  boxShadow: `0 0 24px ${brand[800]}`,
+                  boxShadow: `0 0 24px ${brand[800]}`
                 }
               })
             })

@@ -93,7 +93,7 @@ export default function HomePage() {
           width: "70%"
         }}
       />
-      <CTABanner buttonContent={homePageCTA}/>
+      <CTABanner buttonContent={homePageCTA} />
       <Container id="about-me" sx={{ padding: 4 }}>
         <Typography
           variant="h2"

@@ -32,7 +32,8 @@ const formFields = [
     name: "firstName",
     required: true,
     autoComplete: "given-name",
-    type: "text"
+    type: "text",
+    defaultValue: ""
   },
   {
     id: "2",
@@ -40,7 +41,8 @@ const formFields = [
     name: "lastName",
     required: true,
     autoComplete: "family-name",
-    type: "text"
+    type: "text",
+    defaultValue: ""
   },
   {
     id: "3",
@@ -48,7 +50,8 @@ const formFields = [
     name: "email",
     required: true,
     autoComplete: "email",
-    type: "email"
+    type: "email",
+    defaultValue: ""
   },
   {
     id: "4",
@@ -56,7 +59,8 @@ const formFields = [
     name: "phoneNumber",
     required: false,
     autoComplete: "tel",
-    type: "tel"
+    type: "tel",
+    defaultValue: ""
   },
   {
     id: "5",
@@ -64,6 +68,7 @@ const formFields = [
     name: "subject",
     fullWidth: true,
     type: "text",
+    defaultValue: ""
   },
   {
     id: "6",
@@ -72,6 +77,7 @@ const formFields = [
     multiline: true,
     required: true,
     type: "text",
+    defaultValue: ""
   }
 ];
 
@@ -92,8 +98,8 @@ const ContactPage = () => {
         }}
       />
       <CTABanner buttonContent={contactCTAButtons} />
-      <Container id="#contact-form"  sx={{ padding: 4 }}>
-      <Typography
+      <Container id="#contact-form" sx={{ padding: 4 }}>
+        <Typography
           variant="h2"
           component="h2"
           align="center"
@@ -102,10 +108,10 @@ const ContactPage = () => {
           Contact Form
         </Typography>
         <Divider />
-        <Typography align="center" sx={{pt: 2}}>
+        <Typography align="center" sx={{ pt: 2 }}>
           Form fields with an asterisk "*" are required.
         </Typography>
-        <Form formContent={formFields}/>
+        <Form formContent={formFields} />
       </Container>
     </>
   );

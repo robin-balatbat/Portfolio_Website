@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { Box, Button, Grid, InputLabel, TextField } from "@mui/material";
 
 const FormField = ({
@@ -7,12 +8,45 @@ const FormField = ({
   multiline,
   required,
   autoComplete,
-  type
+  type,
+  control
 }) => {
   const multilineProps = multiline && {
     multiline: true,
     minRows: 6,
     maxRows: 12
+  };
+
+  const requiredValidation = required && {
+    required: {
+      value: true,
+      message: "This form field is required"
+    }
+  };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /[0-9]/;
+
+  const emailValidation = type === "email" && {
+    pattern: {
+      value: emailRegex,
+      message: "Please enter a valid email address"
+    }
+  };
+
+  const phoneNumberValidation = type === "tel" && {
+    pattern: {
+      value: phoneRegex,
+      message: "Please enter a valid phone number"
+    }
+  };
+
+  const validationRules = {
+    rules: {
+      ...requiredValidation,
+      ...emailValidation,
+      ...phoneNumberValidation
+    }
   };
 
   return (
@@ -21,22 +55,42 @@ const FormField = ({
         {label}
         {required && "*"}
       </InputLabel>
-      <TextField
-        id={name}
+      <Controller
         name={name}
-        variant="outlined"
-        size="large"
-        fullWidth
-        required={required}
-        autoComplete={autoComplete}
-        type={type}
-        {...multilineProps}
+        control={control}
+        render={({ field: { onChange, value }, fieldState: { error } }) => (
+          <TextField
+            id={name}
+            name={name}
+            variant="outlined"
+            size="large"
+            fullWidth
+            required={required}
+            autoComplete={autoComplete}
+            type={type}
+            onChange={onChange}
+            value={value}
+            error={!!error}
+            helperText={error ? error.message : null}
+            {...multilineProps}
+          />
+        )}
+        {...validationRules}
       />
     </>
   );
 };
 
 const Form = ({ formContent }) => {
+  const defaultValues = formContent.reduce(
+    (obj, item) => Object.assign({ ...obj, [item.name]: item.defaultValue }),
+    {}
+  );
+
+  const { handleSubmit, reset, control } = useForm({
+    defaultValues: defaultValues
+  });
+
   const formFields = useMemo(
     () =>
       formContent.map((item) => (
@@ -54,11 +108,17 @@ const Form = ({ formContent }) => {
             required={item.required}
             autoComplete={item.autoComplete}
             type={item.type}
+            control={control}
           />
         </Grid>
       )),
     [formContent]
   );
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
 
   return (
     <>
@@ -70,7 +130,12 @@ const Form = ({ formContent }) => {
         >
           {formFields}
           <Grid item xs={12}>
-            <Button variant="contained" size="large" fullWidth>
+            <Button
+              variant="contained"
+              size="large"
+              fullWidth
+              onClick={handleSubmit(onSubmit)}
+            >
               Submit the Form
             </Button>
           </Grid>
