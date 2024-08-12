@@ -31,34 +31,39 @@ const formFields = [
     label: "First Name",
     name: "firstName",
     required: true,
-    autoComplete: "given-name"
+    autoComplete: "given-name",
+    type: "text"
   },
   {
     id: "2",
     label: "Last Name",
     name: "lastName",
     required: true,
-    autoComplete: "family-name"
+    autoComplete: "family-name",
+    type: "text"
   },
   {
     id: "3",
     label: "Email",
     name: "email",
     required: true,
-    autoComplete: "email"
+    autoComplete: "email",
+    type: "email"
   },
   {
     id: "4",
     label: "Phone Number",
     name: "phoneNumber",
     required: false,
-    autoComplete: "tel"
+    autoComplete: "tel",
+    type: "tel"
   },
   {
     id: "5",
     label: "Subject",
     name: "subject",
     fullWidth: true,
+    type: "text",
   },
   {
     id: "6",
@@ -66,6 +71,7 @@ const formFields = [
     name: "message",
     multiline: true,
     required: true,
+    type: "text",
   }
 ];
 
