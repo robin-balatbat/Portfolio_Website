@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { Box, Button, Grid, InputLabel, TextField } from "@mui/material";
 
-const FormField = ({ label, name, multiline, required }) => {
+const FormField = ({ label, name, multiline, required, autoComplete }) => {
   const multilineProps = multiline && {
     multiline: true,
     minRows: 6,
@@ -21,6 +21,7 @@ const FormField = ({ label, name, multiline, required }) => {
         size="large"
         fullWidth
         required={required}
+        autoComplete={autoComplete}
         {...multilineProps}
       />
     </>
@@ -43,6 +44,7 @@ const Form = ({ formContent }) => {
             name={item.name}
             multiline={item.multiline}
             required={item.required}
+            autoComplete={item.autoComplete}
           />
         </Grid>
       )),

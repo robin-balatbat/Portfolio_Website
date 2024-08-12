@@ -31,24 +31,28 @@ const formFields = [
     label: "First Name",
     name: "firstName",
     required: true,
+    autoComplete: "given-name"
   },
   {
     id: "2",
     label: "Last Name",
     name: "lastName",
     required: true,
+    autoComplete: "family-name"
   },
   {
     id: "3",
     label: "Email",
     name: "email",
     required: true,
+    autoComplete: "email"
   },
   {
     id: "4",
     label: "Phone Number",
     name: "phoneNumber",
     required: false,
+    autoComplete: "tel"
   },
   {
     id: "5",
