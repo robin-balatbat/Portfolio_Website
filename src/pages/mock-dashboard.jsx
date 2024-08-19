@@ -15,7 +15,7 @@ import Hero from "../components/Hero";
 import CTABanner from "../components/CTABanner";
 import LogoCollection from "../components/LogoCollection";
 import Highlights from "../components/Highlights";
-import LargeMedia from "../components/LargeMedia";
+import LargeMedia from "../components/MediaCard";
 import Carousel from "../components/Carousel";
 
 import AutoFixHighRoundedIcon from "@mui/icons-material/AutoFixHighRounded";
@@ -245,7 +245,9 @@ const MockDashboard = () => {
           testing to guarantee functionality and reliability."
           logos={techLogos}
         />
-        <Box sx={{ paddingTop: 6, paddingBottom: 8 }}>
+        <Box
+          sx={{ paddingTop: { md: 6, sm: 4, xs: 1 }, paddingBottom: { md: 8, sm: 4, xs: 1 } }}
+        >
           <Divider>
             <Typography component="h3" variant="h3" align="center">
               Screenshots
@@ -267,7 +269,7 @@ const MockDashboard = () => {
             and functionality. Explore and get a closer look at how the design
             and features come together in this project.
           </Typography>
-          <Carousel cardItems={carouselItems}/>
+          <Carousel cardItems={carouselItems} />
         </Box>
       </Container>
     </>
