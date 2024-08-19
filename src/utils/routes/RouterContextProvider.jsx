@@ -7,6 +7,7 @@ import Projects from "../../pages/projects-page.jsx";
 import ErrorPage from "../../pages/error-page.jsx";
 import InProgress from "../../pages/in-progress-page.jsx";
 import ContactPage from "../../pages/contact-page.jsx";
+import MockDashboard from "../../pages/mock-dashboard.jsx";
 
 const Layout = () => {
   return (
@@ -54,6 +55,10 @@ const RouterContextProvider = () => {
         {
           path: "/wip",
           element: <InProgress />
+        },
+        {
+          path: "/mock-dashboard",
+          element: <MockDashboard />
         },
         {
           path: "*",

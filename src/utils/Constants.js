@@ -13,19 +13,18 @@ export const navbarLinks = [
 export const featuredProjects = [
   {
     title: "Project Ascension",
-    description: "My long-term game project",
+    description: "My long-term game project.",
     imageSrc: UnityLogo,
-    imageAlt: "Unity Logo",
+    imageAlt: "This project was made in Unity",
     cardLink: "/wip"
   },
   {
     title: "Mocked Dashboard",
-    description: "Another project",
+    description: "A successfully delivered client project.",
     imageSrc: ReactIcon,
-    imageAlt: "Mocked",
-    cardLink: "/wip"
+    imageAlt: "This project was created with React.",
+    cardLink: "/mock-dashboard"
   },
-  ,
   {
     title: "Mocked AI Chatbot",
     description: "Another project",

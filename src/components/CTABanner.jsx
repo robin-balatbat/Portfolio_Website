@@ -3,7 +3,7 @@ import { alpha, Box, Button } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 
 const buttonStyles = {
-  width: "200px"
+  minWidth: "200px"
 };
 
 const CTABanner = ({ buttonContent }) => {
