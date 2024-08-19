@@ -8,6 +8,7 @@ import ErrorPage from "../../pages/error-page.jsx";
 import InProgress from "../../pages/in-progress-page.jsx";
 import ContactPage from "../../pages/contact-page.jsx";
 import MockDashboard from "../../pages/mock-dashboard.jsx";
+import { ProjectAscension } from "../../pages/project-ascension.jsx";
 
 const Layout = () => {
   return (
@@ -59,6 +60,10 @@ const RouterContextProvider = () => {
         {
           path: "/mock-dashboard",
           element: <MockDashboard />
+        },
+        {
+          path: "/project-ascension",
+          element: <ProjectAscension />
         },
         {
           path: "*",

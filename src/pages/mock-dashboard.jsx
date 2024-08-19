@@ -68,7 +68,7 @@ const projectCTAButtons = [
     link: "https://github.com/robin-balatbat/mock-dashboard",
     label: "Request access on GitHub",
     icon: <GitHubIcon />,
-    ariaLabel: "Visit my LinkedIn (opens in new tab)"
+    ariaLabel: "Request access on GitHub (opens in new tab)"
   }
 ];
 

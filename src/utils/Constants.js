@@ -16,7 +16,7 @@ export const featuredProjects = [
     description: "My long-term game project.",
     imageSrc: UnityLogo,
     imageAlt: "This project was made in Unity",
-    cardLink: "/wip"
+    cardLink: "/project-ascension"
   },
   {
     title: "Mocked Dashboard",
