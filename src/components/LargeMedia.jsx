@@ -1,14 +1,14 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
-export default function MediaCard({src, imageTitle, title, copy}) {
+export default function MediaCard({ src, imageTitle, title, copy }) {
   return (
-    <Card sx={{ maxWidth: 1200 }}>
+    <Card sx={{ maxWidth: 900 }}>
       <CardMedia
-        sx={{ height: 800}}
+        sx={{ height: 600 }}
         image={src}
         title={imageTitle}
       />

@@ -16,6 +16,7 @@ import CTABanner from "../components/CTABanner";
 import LogoCollection from "../components/LogoCollection";
 import Highlights from "../components/Highlights";
 import LargeMedia from "../components/LargeMedia";
+import Carousel from "../components/Carousel";
 
 import AutoFixHighRoundedIcon from "@mui/icons-material/AutoFixHighRounded";
 import ConstructionRoundedIcon from "@mui/icons-material/ConstructionRounded";
@@ -95,6 +96,121 @@ const techLogos = [
   }
 ];
 
+const carouselItems = [
+  <LargeMedia
+    title={"The Dashboard"}
+    src={LandingImage}
+    imageTitle="Screenshot of the table view of the dashboard. 
+              It displays a summarized set of results from tests in a table format."
+    copy={
+      <>
+        <Typography>
+          The image shows a mocked dashboard designed for developers to track
+          and manage test results. The interface is modern, clean, and
+          efficient, improving on an outdated UI with better performance.
+        </Typography>
+        <Typography>Key Features:</Typography>
+        <ul>
+          <li>
+            <b>Filter Options:</b> Users can filter by username, branch, test
+            status, test result, and date range. There's also an option to
+            display only direct tests.
+          </li>
+          <li>
+            <b>Test Information Table:</b> The table displays rows of tests with
+            details such as the test name, username, branch, and date. Each row
+            provides the status of the test (e.g., "3/6 complete"), the results
+            (e.g., "3/6 passed"), and options for more details or external
+            links.
+          </li>
+          <li>
+            <b>Pagination:</b> The dashboard supports pagination, allowing users
+            to navigate through numerous pages of test results.
+          </li>
+        </ul>
+      </>
+    }
+  />,
+  <LargeMedia
+    title={"Expanded Views"}
+    src={ExpandedDashboard}
+    imageTitle="Another screenshot of the dashboard, this time with rows expanded and displaying more detailed information."
+    copy={
+      <>
+        <Typography>
+          The image shows an expanded view of the mocked dashboard from the
+          previous image. In this view, specific rows have been expanded to
+          reveal more detailed tables containing additional information about
+          the test results.
+        </Typography>
+        <Typography>Key Features:</Typography>
+        <ul>
+          <li>
+            <b>Expanded Rows:</b> Rows can be expanded, revealing additional
+            tables with detailed information organized under "DIRECT" and
+            "INDIRECT" sections. Each section is broken down by test levels:
+            local, cluster, and group.
+          </li>
+          <li>
+            <b>Comprehensive Breakdown:</b> For each level, the expanded view
+            displays:
+            <ul>
+              <li>
+                <b>Status:</b> Indicates whether the test was completed.
+              </li>
+              <li>
+                <b>Results:</b> Shows whether the test passed or failed.
+              </li>
+              <li>
+                <b>Suites and Plans:</b> Lists the number of test suites and
+                plans executed.
+              </li>
+              <li>
+                <b>Additional Links:</b> Provides options to view further
+                details in a modal.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>In-Depth Analysis:</b> The expanded tables offer a more detailed
+            examination of test results, allowing developers to track the
+            success or failure of tests across various levels (Local, Cluster,
+            Global) for both direct and indirect test categories.
+          </li>
+        </ul>
+      </>
+    }
+  />,
+  <LargeMedia
+    title={"Modal Details"}
+    src={DashboardModal}
+    imageTitle="Another screenshot of the dashboard, with a modal revealing a detailed summary of test suites run and plans performed."
+    copy={
+      <>
+        <Typography>
+          The image highlights a modal window within the application, offering a
+          detailed view of a specific test run. This modal enhances the user
+          experience by allowing developers to easily access and review specific
+          aspects of a test run, all within a well-organized, tabbed interface.
+        </Typography>
+        <Typography>Key Features:</Typography>
+        <ul>
+          <li>
+            <b>In-Depth Test Details</b> The modal, titled "Test Details,"
+            provides a focused, in-depth look at the specifics of a particular
+            set of plans and suites for a selected level.
+          </li>
+          <li>
+            <b>Tabbed Navigation:</b> The modal features a set of tabs, allowing
+            users to switch between different types of information. The active
+            tab is displayed.
+          </li>
+        </ul>
+      </>
+    }
+  />
+];
+
 const MockDashboard = () => {
   return (
     <>
@@ -141,7 +257,7 @@ const MockDashboard = () => {
             sx={{
               maxWidth: { xs: "100%", md: "70%" },
               margin: "0 auto",
-              padding: 2
+              paddingTop: 2
             }}
             align="center"
           >
@@ -151,125 +267,7 @@ const MockDashboard = () => {
             and functionality. Explore and get a closer look at how the design
             and features come together in this project.
           </Typography>
-          <LargeMedia
-            title={"The Dashboard"}
-            src={LandingImage}
-            imageTitle="Screenshot of the table view of the dashboard. 
-              It displays a summarized set of results from tests in a table format."
-            copy={
-              <>
-                <Typography>
-                  The image shows a mocked dashboard designed for developers to
-                  track and manage test results. The interface is modern, clean,
-                  and efficient, improving on an outdated UI with better
-                  performance.
-                </Typography>
-                <Typography>Key Features:</Typography>
-                <ul>
-                  <li>
-                    <b>Filter Options:</b> Users can filter by username, branch,
-                    test status, test result, and date range. There's also an
-                    option to display only direct tests.
-                  </li>
-                  <li>
-                    <b>Test Information Table:</b> The table displays rows of
-                    tests with details such as the test name, username, branch,
-                    and date. Each row provides the status of the test (e.g.,
-                    "3/6 complete"), the results (e.g., "3/6 passed"), and
-                    options for more details or external links.
-                  </li>
-                  <li>
-                    <b>Pagination:</b> The dashboard supports pagination,
-                    allowing users to navigate through numerous pages of test
-                    results.
-                  </li>
-                </ul>
-              </>
-            }
-          />
-          <Divider sx={{ margin: 4 }} />
-          <LargeMedia
-            title={"Expanded Views"}
-            src={ExpandedDashboard}
-            imageTitle="Another screenshot of the dashboard, this time with rows expanded and displaying more detailed information."
-            copy={
-              <>
-                <Typography>
-                  The image shows an expanded view of the mocked dashboard from
-                  the previous image. In this view, specific rows have been
-                  expanded to reveal more detailed tables containing additional
-                  information about the test results.
-                </Typography>
-                <Typography>Key Features:</Typography>
-                <ul>
-                  <li>
-                    <b>Expanded Rows:</b> Rows can be expanded, revealing
-                    additional tables with detailed information organized under
-                    "DIRECT" and "INDIRECT" sections. Each section is broken
-                    down by test levels: local, cluster, and group.
-                  </li>
-                  <li>
-                    <b>Comprehensive Breakdown:</b> For each level, the expanded
-                    view displays:
-                    <ul>
-                      <li>
-                        <b>Status:</b> Indicates whether the test was completed.
-                      </li>
-                      <li>
-                        <b>Results:</b> Shows whether the test passed or failed.
-                      </li>
-                      <li>
-                        <b>Suites and Plans:</b> Lists the number of test suites
-                        and plans executed.
-                      </li>
-                      <li>
-                        <b>Additional Links:</b> Provides options to view
-                        further details in a modal.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <b>In-Depth Analysis:</b> The expanded tables offer a more
-                    detailed examination of test results, allowing developers to
-                    track the success or failure of tests across various levels
-                    (Local, Cluster, Global) for both direct and indirect test
-                    categories.
-                  </li>
-                </ul>
-              </>
-            }
-          />
-          <Divider sx={{ margin: 4 }} />
-          <LargeMedia
-            title={"Modal Details"}
-            src={DashboardModal}
-            imageTitle="Another screenshot of the dashboard, with a modal revealing a detailed summary of test suites run and plans performed."
-            copy={
-              <>
-                <Typography>
-                  The image highlights a modal window within the application,
-                  offering a detailed view of a specific test run. This modal
-                  enhances the user experience by allowing developers to easily
-                  access and review specific aspects of a test run, all within a
-                  well-organized, tabbed interface.
-                </Typography>
-                <Typography>Key Features:</Typography>
-                <ul>
-                  <li>
-                    <b>In-Depth Test Details</b> The modal, titled "Test
-                    Details," provides a focused, in-depth look at the specifics
-                    of a particular set of plans and suites for a selected
-                    level.
-                  </li>
-                  <li>
-                    <b>Tabbed Navigation:</b> The modal features a set of tabs,
-                    allowing users to switch between different types of
-                    information. The active tab is displayed.
-                  </li>
-                </ul>
-              </>
-            }
-          />
+          <Carousel cardItems={carouselItems}/>
         </Box>
       </Container>
     </>
