@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import CTABanner from "../components/CTABanner";
 import LogoCollection from "../components/LogoCollection";
 import Features from "../components/Features";
+import Highlights from "../components/Highlights";
 
 import ProjectLogo from "../assets/Project_Ascension_Logo.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -12,9 +13,15 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import UnityLogo from "../assets/Unity_Logo.png";
 import Csharp from "../assets/Csharp_Logo.png";
 
-import ExploreIcon from '@mui/icons-material/Explore';
-import PetsIcon from '@mui/icons-material/Pets';
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import ExploreIcon from "@mui/icons-material/Explore";
+import PetsIcon from "@mui/icons-material/Pets";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import SwitchAccessShortcutAddIcon from '@mui/icons-material/SwitchAccessShortcutAdd';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import AltRouteIcon from '@mui/icons-material/AltRoute';
+import ApiIcon from '@mui/icons-material/Api';
+import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import EnloreMap from "../assets/Enlore-Map-WIP.png";
 import AscensionArt from "../assets/Project_Ascension_Cover_Art.png";
@@ -70,6 +77,45 @@ const gameFeatures = [
   }
 ];
 
+const gameHighlights = [
+  {
+    icon: <AutoAwesomeIcon />,
+    title: "Stunning 2.5D Visuals",
+    description:
+      "Dive into a unique visual experience where classic pixel art is seamlessly integrated into a dynamic 3D environment. This blend of retro aesthetics with modern 3D elements creates a distinctive and captivating look that enhances the game's charm and depth."
+  },
+  {
+    icon: <NaturePeopleIcon />,
+    title: "Dynamic World Interactions",
+    description:
+      "Experience a living, breathing world where creatures and elements interact seamlessly. Watch as monsters react to each other and the environment, making the overworld feel dynamic and responsive to your presence."
+  },
+  {
+    icon: <ApiIcon />,
+    title: "Endless Dungeon Adventures",
+    description:
+      "Explore procedurally generated dungeons that offer a fresh challenge with each playthrough. These ever-changing environments keep the adventure exciting and unpredictable, providing new experiences every time you delve into the depths."
+  },
+  {
+    icon: <SwitchAccessShortcutAddIcon />,
+    title: "Scaling Game Difficulty",
+    description:
+      "Face challenges that evolve with your skills and progress. The game adjusts its difficulty based on your experience, ensuring a balanced and engaging challenge that grows with your abilities."
+  },
+  {
+    icon: <AltRouteIcon />,
+    title: "Player-Driven Gameplay",
+    description:
+      "Make decisions that shape your journey and influence the world around you. Your choices will affect gameplay, story outcomes, and interactions, creating a personalized adventure tailored to your decisions."
+  },
+  {
+    icon: <AutoStoriesIcon />,
+    title: "Beyond the Main Quest",
+    description:
+      "Discover a wealth of extra content that extends your adventure beyond the main storyline. Engage in side quests, collectibles, and hidden secrets that enrich the game world and provide additional layers of exploration."
+  }
+];
+
 export const ProjectAscension = () => {
   return (
     <>
@@ -96,7 +142,7 @@ export const ProjectAscension = () => {
         />
         <Divider />
         <Features
-          headline="Planned Features"
+          headline="Adventure Awaits"
           copy="Project Ascension is set to introduce a wide range of exciting 
           features as development continues. Expect dynamic gameplay enhancements, 
           expansive world-building, and an intriguing storyline, all designed to 
@@ -104,6 +150,16 @@ export const ProjectAscension = () => {
           items={gameFeatures}
         />
       </Container>
+      <Highlights
+        headline="Game Features"
+        copy="Project Ascension delivers a captivating blend of 
+        innovative features that elevate the gameplay experience. With its 
+        unique pixel art style set in a dynamic 3D world, the game offers a rich,
+        immersive environment enhanced by interactive elements, adaptive difficulty,
+        and meaningful player choices. Additionally, expansive extra content ensures that
+        every adventure remains fresh and engaging."
+        items={gameHighlights}
+      />
     </>
   );
 };
