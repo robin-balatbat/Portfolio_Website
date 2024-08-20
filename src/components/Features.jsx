@@ -6,7 +6,6 @@ import {
   Chip,
   Container,
   Grid,
-  Link,
   Stack,
   Typography
 } from "@mui/material";
@@ -24,7 +23,7 @@ const Features = ({ headline, copy, items }) => {
   const selectedFeature = items[selectedItemIndex];
 
   return (
-    <Container id="features" sx={{ py: { xs: 8, sm: 16 } }}>
+    <Container id="features" sx={{ py: { xs: 4, sm: 8 } }}>
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
@@ -72,26 +71,28 @@ const Features = ({ headline, copy, items }) => {
               />
             ))}
           </Grid>
+
           <Box
-            component={Card}
-            variant="outlined"
             sx={{
-              display: { xs: "auto", sm: "none" },
-              mt: 4
+              display: { xs: "flex", sm: "none" },
+              mt: 4,
+              flexDirection: "column",
+              gap: 2,
+              alignItems: "center"
             }}
           >
-            <Box
-              sx={{
-                backgroundImage: (theme) =>
-                  theme.palette.mode === "light"
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                minHeight: 280
-              }}
+            <img
+              height="auto"
+              width="100%"
+              src={
+                theme.palette.mode === "light"
+                  ? items[selectedItemIndex].imageLight
+                  : items[selectedItemIndex].imageDark
+              }
+              alt={items[selectedItemIndex].imageAlt}
+              style={{ borderRadius: "12px" }}
             />
-            <Box sx={{ px: 2, pb: 2 }}>
+            <Box sx={{ padding: 2 }} component={Card} variant="outlined">
               <Typography
                 color="text.primary"
                 variant="body2"
@@ -106,23 +107,6 @@ const Features = ({ headline, copy, items }) => {
               >
                 {selectedFeature.description}
               </Typography>
-              <Link
-                color="primary"
-                variant="body2"
-                fontWeight="bold"
-                sx={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  "& > svg": { transition: "0.2s" },
-                  "&:hover > svg": { transform: "translateX(2px)" }
-                }}
-              >
-                <span>Learn more</span>
-                <ChevronRightRoundedIcon
-                  fontSize="small"
-                  sx={{ mt: "1px", ml: "2px" }}
-                />
-              </Link>
             </Box>
           </Box>
           <Stack
@@ -199,26 +183,6 @@ const Features = ({ headline, copy, items }) => {
                     >
                       {description}
                     </Typography>
-                    <Link
-                      color="primary"
-                      variant="body2"
-                      fontWeight="bold"
-                      sx={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        "& > svg": { transition: "0.2s" },
-                        "&:hover > svg": { transform: "translateX(2px)" }
-                      }}
-                      onClick={(event) => {
-                        event.stopPropagation();
-                      }}
-                    >
-                      <span>Learn more</span>
-                      <ChevronRightRoundedIcon
-                        fontSize="small"
-                        sx={{ mt: "1px", ml: "2px" }}
-                      />
-                    </Link>
                   </Box>
                 </Box>
               </Card>
@@ -231,29 +195,17 @@ const Features = ({ headline, copy, items }) => {
           md={6}
           sx={{ display: { xs: "none", sm: "flex" }, width: "100%" }}
         >
-          <Card
-            variant="outlined"
-            sx={{
-              height: "100%",
-              width: "100%",
-              display: { xs: "none", sm: "flex" },
-              pointerEvents: "none"
-            }}
-          >
-            <Box
-              sx={{
-                m: "auto",
-                width: 420,
-                height: 500,
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundImage: (theme) =>
-                  theme.palette.mode === "light"
-                    ? items[selectedItemIndex].imageLight
-                    : items[selectedItemIndex].imageDark
-              }}
-            />
-          </Card>
+          <img
+            height={500}
+            width="auto"
+            src={
+              theme.palette.mode === "light"
+                ? items[selectedItemIndex].imageLight
+                : items[selectedItemIndex].imageDark
+            }
+            alt={items[selectedItemIndex].imageAlt}
+            style={{ borderRadius: "12px", margin: "0 auto" }}
+          />
         </Grid>
       </Grid>
     </Container>
