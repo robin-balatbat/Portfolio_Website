@@ -10,7 +10,6 @@ import {
   Typography
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 
 const Features = ({ headline, copy, items }) => {
   const theme = useTheme();
@@ -27,7 +26,7 @@ const Features = ({ headline, copy, items }) => {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <div>
-            <Typography component="h3" variant="h3" color="text.primary">
+            <Typography component="h2" variant="h2" color="text.primary">
               {headline}
             </Typography>
             <Typography
@@ -71,7 +70,6 @@ const Features = ({ headline, copy, items }) => {
               />
             ))}
           </Grid>
-
           <Box
             sx={{
               display: { xs: "flex", sm: "none" },
@@ -90,7 +88,7 @@ const Features = ({ headline, copy, items }) => {
                   : items[selectedItemIndex].imageDark
               }
               alt={items[selectedItemIndex].imageAlt}
-              style={{ borderRadius: "12px" }}
+              style={{ borderRadius: "12px", border: "1px solid #55A6F6" }}
             />
             <Box sx={{ padding: 2 }} component={Card} variant="outlined">
               <Typography
@@ -193,10 +191,14 @@ const Features = ({ headline, copy, items }) => {
           item
           xs={12}
           md={6}
-          sx={{ display: { xs: "none", sm: "flex" }, width: "100%" }}
+          sx={{
+            display: { xs: "none", sm: "flex" },
+            width: "100%",
+            alignItems: "center"
+          }}
         >
           <img
-            height={500}
+            height={600}
             width="auto"
             src={
               theme.palette.mode === "light"
@@ -204,7 +206,7 @@ const Features = ({ headline, copy, items }) => {
                 : items[selectedItemIndex].imageDark
             }
             alt={items[selectedItemIndex].imageAlt}
-            style={{ borderRadius: "12px", margin: "0 auto" }}
+            style={{ borderRadius: "12px", margin: "0 auto",  border: "1px solid #55A6F6" }}
           />
         </Grid>
       </Grid>

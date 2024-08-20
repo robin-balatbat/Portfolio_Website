@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Divider, } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 
 import Hero from "../components/Hero";
 import CTABanner from "../components/CTABanner";
@@ -12,11 +12,13 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import UnityLogo from "../assets/Unity_Logo.png";
 import Csharp from "../assets/Csharp_Logo.png";
 
-import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
-import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
-import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import ExploreIcon from '@mui/icons-material/Explore';
+import PetsIcon from '@mui/icons-material/Pets';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
-import EnloreMap from "../assets/Enlore-Map-WIP.png"
+import EnloreMap from "../assets/Enlore-Map-WIP.png";
+import AscensionArt from "../assets/Project_Ascension_Cover_Art.png";
+import Starters from "../assets/Starters.png";
 
 const projectCTA = [
   {
@@ -40,30 +42,32 @@ const techLogos = [
 
 const gameFeatures = [
   {
-    icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    icon: <ExploreIcon />,
+    title: "Explore the Enlore Region",
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      "Venture into the vibrant and diverse Enlore region, a meticulously crafted world brimming with unique landscapes, hidden secrets, and dynamic environments. Each area is designed to offer a rich and immersive experience as you uncover its many wonders.",
     imageLight: EnloreMap,
     imageDark: EnloreMap,
-    imageAlt: "A map of the Enlore region."
+    imageAlt: "A work-in-progress map of the Enlore region."
   },
   {
-    icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    icon: <PetsIcon />,
+    title: "Discover 151 Unique Monsters",
     description:
-      'This item could provide information about the mobile app version of the product.',
-    imageLight: 'url("/static/images/templates/templates-images/mobile-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/mobile-dark.png")',
+      "Encounter and befriend a diverse array of 151 original monsters, each with distinct abilities and characteristics. These creatures are designed to add depth and excitement to your journey, offering endless possibilities for strategy and exploration.",
+    imageLight: Starters,
+    imageDark: Starters,
+    imageAlt: "The three starting creatures for Project Ascension"
   },
   {
-    icon: <DevicesRoundedIcon />,
-    title: 'Available on all platforms',
+    icon: <TravelExploreIcon />,
+    title: "Mysteries to Unravel",
     description:
-      'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
-    imageLight: 'url("/static/images/templates/templates-images/devices-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/devices-dark.png")',
-  },
+      "Dive into a captivating narrative that unfolds as you explore the Enlore region. With a story full of twists and secrets, you’ll find yourself drawn into a quest that challenges your wits and curiosity, enriching your adventure with every discovery.",
+    imageLight: AscensionArt,
+    imageDark: AscensionArt,
+    imageAlt: "Cover art for Project Ascension"
+  }
 ];
 
 export const ProjectAscension = () => {
@@ -91,7 +95,14 @@ export const ProjectAscension = () => {
           logos={techLogos}
         />
         <Divider />
-        <Features headline="Planned Features" copy="Test text" items={gameFeatures}/>
+        <Features
+          headline="Planned Features"
+          copy="Project Ascension is set to introduce a wide range of exciting 
+          features as development continues. Expect dynamic gameplay enhancements, 
+          expansive world-building, and an intriguing storyline, all designed to 
+          enrich your adventure and engagement with the game."
+          items={gameFeatures}
+        />
       </Container>
     </>
   );
