@@ -35,7 +35,11 @@ const Carousel = ({ cardItems }) => {
         padding: 3
       }}
     >
-      <IconButton onClick={handlePrevPage} disabled={currentPage === 0}>
+      <IconButton
+        onClick={handlePrevPage}
+        disabled={currentPage === 0}
+        aria-label="Previous Page"
+      >
         <NavigateBefore />
       </IconButton>
       <Box
@@ -44,7 +48,7 @@ const Carousel = ({ cardItems }) => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          height: "max-content",
+          height: "max-content"
         }}
       >
         {cards.map((card, index) => (
@@ -52,7 +56,11 @@ const Carousel = ({ cardItems }) => {
             key={`card-${Math.random() + index}`}
             sx={{ display: currentPage === index ? "block" : "none" }}
           >
-            <Slide direction={slideDirection} in={currentPage === index} key={`slide-${Math.random() + index}`}>
+            <Slide
+              direction={slideDirection}
+              in={currentPage === index}
+              key={`slide-${Math.random() + index}`}
+            >
               <div key={`div-${Math.random() + index}`}>
                 {cards.slice(
                   index * cardsPerPage,
@@ -68,8 +76,9 @@ const Carousel = ({ cardItems }) => {
         disabled={
           currentPage >= Math.ceil((cards.length || 0) / cardsPerPage) - 1
         }
+        aria-label="Next Slide"
       >
-        <NavigateNext fontSize="60px"/>
+        <NavigateNext fontSize="60px" />
       </IconButton>
     </Box>
   );

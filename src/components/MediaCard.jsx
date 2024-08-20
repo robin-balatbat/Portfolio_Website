@@ -1,23 +1,41 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import { Box, Card, Grid, Typography } from "@mui/material";
 
 export default function MediaCard({ src, imageTitle, title, copy }) {
   return (
-    <Card sx={{ maxWidth: {md: 900, sm: 600, xs: 400} }}>
-      <CardMedia
-        sx={{ height: {md: 600, sm: 400, xs: 300} }}
-        image={src}
-        title={imageTitle}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        alignItems: "center",
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#000",
+          width: "100%",
+          display: "flex",
+          borderRadius: "12px",
+          border: "1px solid #55A6F6"
+        }}
+      >
+        <img
+          src={src}
+          alt={imageTitle}
+          style={{
+            maxHeight: 600,
+            width: "auto",
+            margin: "0 auto"
+          }}
+        />
+      </Box>
+      <Box sx={{ padding: 2 }} component={Card} variant="outlined">
+        <Typography gutterBottom variant="h5" component="p">
           {title}
         </Typography>
         {copy}
-      </CardContent>
-    </Card>
+      </Box>
+    </Box>
   );
 }

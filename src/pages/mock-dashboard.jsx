@@ -15,7 +15,7 @@ import Hero from "../components/Hero";
 import CTABanner from "../components/CTABanner";
 import LogoCollection from "../components/LogoCollection";
 import Highlights from "../components/Highlights";
-import LargeMedia from "../components/MediaCard";
+import MediaCard from "../components/MediaCard";
 import Carousel from "../components/Carousel";
 
 import AutoFixHighRoundedIcon from "@mui/icons-material/AutoFixHighRounded";
@@ -97,7 +97,7 @@ const techLogos = [
 ];
 
 const carouselItems = [
-  <LargeMedia
+  <MediaCard
     title={"The Dashboard"}
     src={LandingImage}
     imageTitle="Screenshot of the table view of the dashboard. 
@@ -131,7 +131,7 @@ const carouselItems = [
       </>
     }
   />,
-  <LargeMedia
+  <MediaCard
     title={"Expanded Views"}
     src={ExpandedDashboard}
     imageTitle="Another screenshot of the dashboard, this time with rows expanded and displaying more detailed information."
@@ -181,7 +181,7 @@ const carouselItems = [
       </>
     }
   />,
-  <LargeMedia
+  <MediaCard
     title={"Modal Details"}
     src={DashboardModal}
     imageTitle="Another screenshot of the dashboard, with a modal revealing a detailed summary of test suites run and plans performed."
